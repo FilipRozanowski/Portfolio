@@ -1,6 +1,54 @@
+@font-face {
+  font-family: 'Anta';
+  src: url('../fonts/Anta-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'JosefinSans';
+  src: url('../fonts/JosefinSans-VariableFont_wght.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: normal;
+}
+
 body{
     margin: 0;
     background-color:#1a1f2e ;
+    font-family: 'JosefinSans', sans-serif;
+}
+
+#logo_header_small{
+    color: white;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Anta', sans-serif;
+    align-items: center;
+}
+
+.blue_text{
+    color:#89BCD9;
+}
+
+
+#header_right{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1, h2 {
+  font-family: 'Anta', sans-serif;
+}
+
+#headtitle{
+    color: white;
+    text-align: center;
+}
+
+header{
+    display: flex;
+    align-items: center;
 }
 
 main{
