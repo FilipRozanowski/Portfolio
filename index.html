@@ -11,30 +11,167 @@
 <body>
 
     <header>
-        <img src="./imgs/BG shape.png" width="500px" height="500px">
 
-        <div id="header_right">
-            <div id="logo_header_small">
-                <img src="./imgs/svgs/Logo icon.svg" width="80px" height="60px">
+        <div id="social-icons">
+            <a href="mailto:..."><img src="./imgs/svgs/Email button.svg"></a>
+            <a href="https://github.com/..."><img src="./imgs/svgs/Github button.svg"></a>
+            <a href="https://linkedin.com/..."><img src="./imgs/svgs/Linkedin button.svg"></a>
+        </div>
+
+        <div id="header_top">
+            <img src="./imgs/BG shape.png" id="bg-shape">
+
+            <div id="header_right">
+                <div class="logo_header_small">
+                    <img src="./imgs/svgs/Logo icon.svg" class="logo-img">
+                    <p>F.Rozanowski</p>
+                    <p class="blue_text">developer</p>
+                </div>
+
+                <div id="headtitle">
+                    <h1>Filip Rozanowski</h1>
+                    <h2>FRONTEND DEVELOPER</h2>
+                </div>
+
+                <a href="#main" id="arrow">
+                    <img src="./imgs/svgs/Arrow down.svg">
+                </a>
+            </div>
+        </div>
+
+        <nav>
+            <div class="logo_nav_small">
+                <img src="./imgs/svgs/Logo icon nav.svg" class="logo-nav-img">
                 <p>F.Rozanowski</p>
                 <p class="blue_text">developer</p>
             </div>
 
-            <div id="headtitle">
-                <h1>Filip Rozanowski</h1>
-                <h2>FRONTEND DEVELOPER</h2>
+            <a href="#whyme_title">Why me</a>
+            <a href="#skills_title">Skills</a>
+            <a href="#projects_title">Projects</a>
+            <a href="#contact_title">Contact</a>
+
+            <div id="lang_select">
+                <a href="#" class="lang-btn" data-lang="de">DE</a>
+                <a href="#" class="lang-btn active" data-lang="en">EN</a>
             </div>
-
-            <img src="./imgs/svgs/Arrow down.svg">
-        </div>
-        <nav>
-
         </nav>
+
     </header>
 
     <main>
+        <div class="main_box">
+            <h1 id="whyme_title">Why me</h1>
+            <div id="whyme_content">
+                <div id="locate_content">
+                    <img src="./imgs/svgs/locate icon.svg">
+                    <p><a href="">I am </a>located in Ense..|</p>
+                </div>
+                <p>I'm not just someone who codes to get things done — I actually care about the details. When something
+                    doesn't look right or could work better, it bothers me until I fix it. I'm the kind of person who
+                    looks up why something works, not just that it works. I like to keep my code clean and think about
+                    how others might read it later. I'm still learning, but I pick things up fast and I don't give up
+                    easily when I hit a wall. If you give me a problem, I'll figure it out.</p>
+            </div>
+        </div>
+
+       <div class="main_box">
+    <h1 id="skills_title">My Skills</h1>
+    <div id="skills_content">
+        <div class="skills_grid">
+            <div class="skill_item">
+                <img src="./imgs/svgs/html-icon.svg">
+            </div>
+            <div class="skill_item">
+                <img src="./imgs/svgs/css-icon.svg">
+            </div>
+            <div class="skill_item">
+                <img src="./imgs/svgs/js-icon.svg">
+            </div>
+            <div class="skill_item">
+                <img src="./imgs/svgs/git-icon.svg">
+            </div>
+            <div class="skill_item">
+                <img src="./imgs/svgs/api-icon.svg">
+            </div>
+        </div>
+
+        <div id="skills_bubble">
+            <p class="bubble_title">I am currently learning</p>
+            <div class="bubble_icons">
+                <div class="skill_item">
+                    <img src="./imgs/svgs/type-icon.svg">
+                </div>
+            </div>
+            <p class="bubble_text">Motivated to continually improve my skills and stay up to date with new technologies.</p>
+        </div>
+    </div>
+</div>
+
+        <div class="main_box">
+            <h1 id="projects_title">My Projects</h1>
+            <div id="projects_content">
+
+            </div>
+        </div>
+
+      <div class="main_box">
+    <h2>Need a teamplayer? Here's what my colleagues say about me</h2>
+    <div id="teamplayer_content">
+
+        <div class="teamplayer_bubble">
+            <p class="teamplayer_name">Anna K.</p>
+            <p class="teamplayer_project">Project <a href="#">Portfolio</a></p>
+            <p class="teamplayer_text">"Filip always brings a calm and focused energy to the team. When something breaks, he's the first one trying to figure out why — not just how to patch it."</p>
+            <a href="#" class="teamplayer_linkedin">Linked In Profile</a>
+        </div>
+
+        <div class="teamplayer_bubble">
+            <p class="teamplayer_name">Max S.</p>
+            <p class="teamplayer_project">Project <a href="#">Sharkie</a></p>
+            <p class="teamplayer_text">"What I appreciate most is that he actually cares about the code quality. He asks good questions and never ships something he doesn't understand."</p>
+            <a href="#" class="teamplayer_linkedin">Linked In Profile</a>
+        </div>
+
+        <div class="teamplayer_bubble">
+            <p class="teamplayer_name">Laura M.</p>
+            <p class="teamplayer_project">Project <a href="#">Join</a></p>
+            <p class="teamplayer_text">"Filip is easy to work with. He communicates clearly, takes feedback well and always follows through on what he says he'll do."</p>
+            <a href="#" class="teamplayer_linkedin">Linked In Profile</a>
+        </div>
+
+    </div>
+</div>
+
+        <div class="main_box">
+            <h1 id="contact_title">Contact me</h1>
+            <div id="contact_content">
+
+            </div>
+        </div>
 
     </main>
+
+    <footer>
+        <div id="footer_legal">
+            <a href="">Legal notice</a>
+            <p>© Filip Rozanowski 2026</p>
+        </div>
+
+        <div class="logo_nav_small">
+            <img src="./imgs/svgs/Logo icon nav.svg" class="logo-nav-img">
+            <p>F.Rozanowski</p>
+            <p class="blue_text">developer</p>
+        </div>
+
+        <div id="social-icons-footer">
+            <a href="mailto:..."><img src="./imgs/svgs/Email button dark.svg"></a>
+            <a href="https://github.com/..."><img src="./imgs/svgs/Github button dark.svg"></a>
+            <a href="https://linkedin.com/..."><img src="./imgs/svgs/Linkedin button dark.svg"></a>
+        </div>
+    </footer>
+
+    <script src="./script.js"></script>
 
 </body>
 
