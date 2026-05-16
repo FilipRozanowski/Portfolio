@@ -482,8 +482,6 @@ footer a:hover {
 
 /* ─── Projects ─── */
 
-/* ─── PROJECTS ─── */
-
 #project_tabs {
     display: flex;
     border-bottom: 2px solid rgba(137, 188, 217, 0.2);
@@ -585,7 +583,8 @@ footer a:hover {
 
 .tech_icons img {
     width: clamp(30px, 3vw, 50px);
-    height: auto;
+    height: clamp(30px, 3vw, 50px);
+    object-fit: contain; 
 }
 
 .project_preview {
