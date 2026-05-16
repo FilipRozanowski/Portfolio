@@ -39,7 +39,9 @@
             </div>
         </div>
 
-        <nav>
+    </header>
+
+     <nav>
             <div class="logo_nav_small">
                 <img src="./imgs/svgs/Logo icon nav.svg" class="logo-nav-img">
                 <p>F.Rozanowski</p>
@@ -56,8 +58,6 @@
                 <a href="#" class="lang-btn active" data-lang="en">EN</a>
             </div>
         </nav>
-
-    </header>
 
     <main>
         <div class="main_box">
@@ -111,8 +111,64 @@
         <div class="main_box">
             <h1 id="projects_title">My Projects</h1>
             <div id="projects_content">
+    <div id="project_tabs">
+        <button class="tab_btn active" data-project="dabubble">1. DA Bubble</button>
+        <button class="tab_btn" data-project="sharkie">2. Sharkie</button>
+        <button class="tab_btn" data-project="join">3. Join</button>
+        <button class="tab_btn" data-project="ongoing">4. Ongoing Project</button>
+    </div>
 
+    <div id="project_panels">
+
+        <div class="project_panel active" data-project="dabubble">
+            <div class="project_left">
+                <div class="project_section">
+                    <span class="project_dot"></span>
+                    <div>
+                        <h3>About the project <span class="project_duration">Duration: 4 weeks</span></h3>
+                        <p>Task manager inspired by the Kanban System. Create and organize tasks using drag and drop, assign them to team members, track progress across columns and manage your contacts.</p>
+                    </div>
+                </div>
+                <div class="project_section">
+                    <span class="project_dot"></span>
+                    <div>
+                        <h3>How I have organised my work process</h3>
+                        <p>We split the app into clear components from the start — board, tasks, contacts and auth each had their own files and logic. We used Git to coordinate our work and kept naming and structure consistent so anyone could jump into any part of the code.</p>
+                    </div>
+                </div>
+                <div class="project_section">
+                    <span class="project_dot"></span>
+                    <div>
+                        <h3>My group work experience</h3>
+                        <p>Built in a team of three, with each person owning specific features. I worked on the task board and drag & drop logic. We held regular check-ins to stay aligned and made sure no one was blocked for long — clean communication made the whole project run smoothly.</p>
+                    </div>
+                </div>
             </div>
+
+            <div class="project_right">
+                <div class="project_tech">
+                    <p>Technologies</p>
+                    <div class="tech_icons">
+                        <img src="./imgs/svgs/html-icon.svg">
+                        <img src="./imgs/svgs/js-icon.svg">
+                        <img src="./imgs/svgs/css-icon.svg">
+                    </div>
+                </div>
+                <img src="./imgs/join-preview.png" class="project_preview">
+                <div class="project_btns">
+                    <a href="#" class="btn_filled">Live Test</a>
+                    <a href="#" class="btn_outline">GitHub</a>
+                </div>
+            </div>
+        </div>
+
+       
+        <div class="project_panel" data-project="sharkie">
+            ...
+        </div>
+
+    </div>
+</div>
         </div>
 
       <div class="main_box">

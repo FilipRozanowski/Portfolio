@@ -41,6 +41,13 @@ h1, h2 {
     color: var(--color-blue);
 }
 
+#whyme_title,
+#skills_title,
+#projects_title,
+#contact_title {
+    scroll-margin-top: clamp(70px, 8vw, 100px); /* gleiche Höhe wie die Nav */
+}
+
 /* ─── HEADER ─── */
 
 header {
@@ -49,7 +56,7 @@ header {
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    min-height: 100vh;
+     min-height: calc(100vh - clamp(70px, 8vw, 100px));
     width: 100%;
 }
 
@@ -195,6 +202,9 @@ nav {
     display: flex;
     justify-content: space-around;
     align-items: center;
+        position: sticky;
+    top: 0;
+    z-index: 100;
 }
 
 nav a {
@@ -468,4 +478,151 @@ footer a:hover {
     font-size: clamp(11px, 1vw, 16px);
     text-decoration: underline;
     margin: 0;
+}
+
+/* ─── Projects ─── */
+
+/* ─── PROJECTS ─── */
+
+#project_tabs {
+    display: flex;
+    border-bottom: 2px solid rgba(137, 188, 217, 0.2);
+    margin-bottom: 40px;
+}
+
+.tab_btn {
+    background: none;
+    border: none;
+    color: rgba(137, 188, 217, 0.5);
+    font-family: 'Anta', sans-serif;
+    font-size: clamp(14px, 1.5vw, 22px);
+    padding: 16px 30px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    border-bottom: 3px solid transparent;
+    margin-bottom: -2px;
+}
+
+.tab_btn:hover {
+    color: var(--color-blue);
+}
+
+.tab_btn.active {
+    color: var(--color-white);
+    background-color: var(--color-dark);
+    border-radius: 8px 8px 0 0;
+    border-bottom: 3px solid var(--color-blue);
+}
+
+.project_panel {
+    display: none;
+    gap: 60px;
+}
+
+.project_panel.active {
+    display: flex;
+}
+
+.project_left {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.project_section {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+.project_dot {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background-color: var(--color-blue);
+    flex-shrink: 0;
+    margin-top: 6px;
+}
+
+.project_section h3 {
+    color: var(--color-white);
+    font-family: 'Anta', sans-serif;
+    font-size: clamp(14px, 1.5vw, 20px);
+    margin: 0 0 8px 0;
+}
+
+.project_duration {
+    color: rgba(255,255,255,0.5);
+    font-size: clamp(12px, 1vw, 16px);
+    margin-left: 16px;
+}
+
+.project_right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.project_tech {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.project_tech p {
+    color: var(--color-white);
+    margin: 0;
+}
+
+.tech_icons {
+    display: flex;
+    gap: 16px;
+}
+
+.tech_icons img {
+    width: clamp(30px, 3vw, 50px);
+    height: auto;
+}
+
+.project_preview {
+    width: 100%;
+    max-width: 450px;
+    border-radius: 12px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.4);
+}
+
+.project_btns {
+    display: flex;
+    gap: 16px;
+}
+
+.btn_filled {
+    background-color: var(--color-blue);
+    color: var(--color-dark);
+    padding: 12px 30px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: opacity 0.3s ease;
+}
+
+.btn_filled:hover { opacity: 0.8; }
+
+.btn_outline {
+    border: 2px solid var(--color-blue);
+    color: var(--color-blue);
+    padding: 12px 30px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn_outline:hover {
+    background-color: var(--color-blue);
+    color: var(--color-dark);
 }
