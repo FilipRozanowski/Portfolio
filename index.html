@@ -115,7 +115,6 @@
         <button class="tab_btn active" data-project="join">1. Join</button>
         <button class="tab_btn" data-project="el pollo loco">2. El pollo loco</button>
         <button class="tab_btn" data-project="pokedex">3. Pokedex</button>
-        <button class="tab_btn" data-project="ongoing">4. Ongoing Project</button>
     </div>
 
     <div id="project_panels">
@@ -197,13 +196,55 @@
                         <img src="./imgs/svgs/css-icon.svg">
                     </div>
                 </div>
-                <img src="./imgs/join.png" class="project_preview">
+                <img src="./imgs/elpolloloco.png" class="project_preview">
                 <div class="project_btns">
                     <a href="#" class="btn_filled">Live Test</a>
-                    <a href="https://github.com/ChristopherBraun196/join" class="btn_outline">GitHub</a>
+                    <a href="https://github.com/FilipRozanowski/El-pollo-loco" class="btn_outline">GitHub</a>
                 </div>
             </div>
         </div>
+
+        <div class="project_panel" data-project="pokedex">
+    <div class="project_left">
+        <div class="project_section">
+            <span class="project_dot"></span>
+            <div>
+                <h3>About the project <span class="project_duration">Duration: 1 week</span></h3>
+                <p>A Pokédex web app built by consuming a public REST API. Search and browse Pokémon, view their stats, types and details — all fetched live from the PokéAPI. Clean, responsive and fast.</p>
+            </div>
+        </div>
+        <div class="project_section">
+            <span class="project_dot"></span>
+            <div>
+                <h3>How I have organised my work process</h3>
+                <p>I kept the project intentionally simple and clean — API calls, rendering logic and styling each in their own place. Working with external data taught me how to handle asynchronous requests, parse JSON responses and display dynamic content without a framework.</p>
+            </div>
+        </div>
+        <div class="project_section">
+            <span class="project_dot"></span>
+            <div>
+                <h3>My solo work experience</h3>
+                <p>Solo project from start to finish. Short timeline meant I had to prioritise fast — core functionality first, polish after. It was a great exercise in working with real-world APIs and translating raw data into a usable interface.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="project_right">
+        <div class="project_tech">
+            <p>Technologies</p>
+            <div class="tech_icons">
+                <img src="./imgs/svgs/html-icon.svg">
+                <img src="./imgs/svgs/js-icon.svg">
+                <img src="./imgs/svgs/css-icon.svg">
+            </div>
+        </div>
+        <img src="./imgs/pokedex.png" class="project_preview">
+        <div class="project_btns">
+            <a href="#" class="btn_filled">Live Test</a>
+            <a href="https://github.com/FilipRozanowski/Pokedex" class="btn_outline">GitHub</a>
+        </div>
+    </div>
+</div>
 
     </div>
 </div>
@@ -214,24 +255,17 @@
     <div id="teamplayer_content">
 
         <div class="teamplayer_bubble">
-            <p class="teamplayer_name">Anna K.</p>
-            <p class="teamplayer_project">Project <a href="#">Portfolio</a></p>
-            <p class="teamplayer_text">"Filip always brings a calm and focused energy to the team. When something breaks, he's the first one trying to figure out why — not just how to patch it."</p>
-            <a href="#" class="teamplayer_linkedin">Linked In Profile</a>
-        </div>
-
-        <div class="teamplayer_bubble">
-            <p class="teamplayer_name">Max S.</p>
-            <p class="teamplayer_project">Project <a href="#">Sharkie</a></p>
+            <p class="teamplayer_name">Mischa S.</p>
+            <p class="teamplayer_project">Project <a href="#project_title">Join</a></p>
             <p class="teamplayer_text">"What I appreciate most is that he actually cares about the code quality. He asks good questions and never ships something he doesn't understand."</p>
-            <a href="#" class="teamplayer_linkedin">Linked In Profile</a>
+            <a href="https://ch.linkedin.com/in/mischa-sigrist-08a8b6a1?trk=people-guest_people_search-card" class="teamplayer_linkedin">Linked In Profile</a>
         </div>
 
         <div class="teamplayer_bubble">
-            <p class="teamplayer_name">Laura M.</p>
-            <p class="teamplayer_project">Project <a href="#">Join</a></p>
+            <p class="teamplayer_name">Christopher B.</p>
+            <p class="teamplayer_project">Project <a href="#project_title">Join</a></p>
             <p class="teamplayer_text">"Filip is easy to work with. He communicates clearly, takes feedback well and always follows through on what he says he'll do."</p>
-            <a href="#" class="teamplayer_linkedin">Linked In Profile</a>
+            <a href="https://de.linkedin.com/in/christopher-braun-6586a7407?trk=people-guest_people_search-card" class="teamplayer_linkedin">Linked In Profile</a>
         </div>
 
     </div>
@@ -240,7 +274,45 @@
         <div class="main_box">
             <h1 id="contact_title">Contact me</h1>
             <div id="contact_content">
+                <div id="contact_content">
+    <div id="contact_top">
+        <p id="contact_intro">Feel free to get in touch with job offers or any kind of opportunities. I'm always open to new projects and collaborations.</p>
+        <div id="contact_info">
+            <div class="contact_info_item">
+                <img src="./imgs/svgs/Email button.svg">
+                <p>E-mail: fohrer.developer@gmail.com</p>
+            </div>
+            <div class="contact_info_item">
+                <img src="./imgs/svgs/phone-icon.svg">
+                <p>Tel: 0157 123 456 68</p>
+            </div>
+        </div>
+    </div>
 
+    <div id="contact_form">
+        <div id="contact_form_top">
+            <div class="input_group">
+                <label>Your name</label>
+                <input type="text" placeholder="">
+            </div>
+            <div class="input_group">
+                <label>Your Email</label>
+                <input type="email" placeholder="">
+            </div>
+        </div>
+        <div class="input_group">
+            <label>Your Message</label>
+            <textarea rows="6"></textarea>
+        </div>
+        <div id="contact_form_bottom">
+            <div id="contact_checkbox">
+                <input type="checkbox" id="privacy">
+                <label for="privacy">I've read the <a href="#">privacy policy</a> and agree to the processing of my data as outlined.</label>
+            </div>
+            <button id="contact_send">Send</button>
+        </div>
+    </div>
+</div>
             </div>
         </div>
 
