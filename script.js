@@ -1,4 +1,4 @@
-emailjs.init('sbVViQV7iH8oE2JZv');
+if (typeof emailjs !== 'undefined') emailjs.init('sbVViQV7iH8oE2JZv');
 
 // ─── TRANSLATIONS ───
 const translations = {
@@ -136,7 +136,7 @@ const translations = {
   }
 };
 
-let currentLang = 'en';
+let currentLang = localStorage.getItem('lang') || 'en';
 
 function applyLanguage(lang) {
   // Desktop nav
@@ -221,9 +221,17 @@ langBtns.forEach(btn => {
     document.querySelectorAll(`.lang-btn[data-lang="${btn.dataset.lang}"]`)
       .forEach(b => b.classList.add('active'));
     currentLang = btn.dataset.lang;
+    localStorage.setItem('lang', currentLang);
     applyLanguage(currentLang);
   });
 });
+
+// ─── APPLY SAVED LANGUAGE ON LOAD ───
+if (currentLang !== 'en') {
+  document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+  document.querySelectorAll(`.lang-btn[data-lang="${currentLang}"]`).forEach(b => b.classList.add('active'));
+  applyLanguage(currentLang);
+}
 
 // ─── PROJECT TABS ───
 const tabBtns = document.querySelectorAll('.tab_btn');
