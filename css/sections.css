@@ -170,6 +170,9 @@ main h2 {
     gap: clamp(10px, 1.8vw, 27px);
     justify-content: center;
     align-items: center;
+    width: 84%;
+    max-width: 1400px;
+    margin-bottom: clamp(30px, 5vw, 90px);
 }
 
 .teamplayer_bubble {
