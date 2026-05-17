@@ -1,6 +1,9 @@
 if (typeof emailjs !== 'undefined') emailjs.init('sbVViQV7iH8oE2JZv');
 
-// ─── TRANSLATIONS ───
+/**
+ * UI string translations keyed by language code.
+ * @type {{en: Object, de: Object}}
+ */
 const translations = {
   en: {
     nav_whyme: 'Why me',
@@ -136,28 +139,33 @@ const translations = {
   }
 };
 
+/**
+ * The currently active language code, persisted in localStorage.
+ * @type {string}
+ */
 let currentLang = localStorage.getItem('lang') || 'en';
 
+/**
+ * Updates all translatable DOM elements to the given language.
+ * @param {string} lang - Language code ('en' or 'de').
+ * @returns {void}
+ */
 function applyLanguage(lang) {
-  // Desktop nav
   const desktopNavLinks = document.querySelectorAll('nav a:not(.lang-btn)');
   if (desktopNavLinks[0]) desktopNavLinks[0].textContent = translations[lang].nav_whyme;
   if (desktopNavLinks[1]) desktopNavLinks[1].textContent = translations[lang].nav_skills;
   if (desktopNavLinks[2]) desktopNavLinks[2].textContent = translations[lang].nav_projects;
   if (desktopNavLinks[3]) desktopNavLinks[3].textContent = translations[lang].nav_contact;
 
-  // Mobile nav links
   const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
   if (mobileNavLinks[0]) mobileNavLinks[0].textContent = translations[lang].nav_whyme;
   if (mobileNavLinks[1]) mobileNavLinks[1].textContent = translations[lang].nav_skills;
   if (mobileNavLinks[2]) mobileNavLinks[2].textContent = translations[lang].nav_projects;
   if (mobileNavLinks[3]) mobileNavLinks[3].textContent = translations[lang].nav_contact;
 
-  // Footer legal element (link on index, span on legal page)
   const legalFooterEl = document.querySelector('#footer_legal a') || document.querySelector('.footer_legal_current');
   if (legalFooterEl) legalFooterEl.textContent = translations[lang].legal;
 
-  // Generic data-i18n handler (used for legal page content)
   document.querySelectorAll('[data-i18n]').forEach(el => {
     const key = el.dataset.i18n;
     if (key !== 'legal' && translations[lang][key] !== undefined) {
@@ -165,7 +173,6 @@ function applyLanguage(lang) {
     }
   });
 
-  // Index-only translations
   if (!document.getElementById('whyme_title')) return;
 
   document.getElementById('whyme_title').textContent = translations[lang].whyme_title;
@@ -211,12 +218,10 @@ function applyLanguage(lang) {
   document.querySelector('#locate_content p').childNodes[1].textContent = translations[lang].located_text;
 }
 
-// ─── LANGUAGE BUTTONS (desktop + mobile, alle zusammen) ───
 const langBtns = document.querySelectorAll('.lang-btn');
 langBtns.forEach(btn => {
   btn.addEventListener('click', (e) => {
     e.preventDefault();
-    // Alle lang-btns auf der ganzen Seite syncen
     langBtns.forEach(b => b.classList.remove('active'));
     document.querySelectorAll(`.lang-btn[data-lang="${btn.dataset.lang}"]`)
       .forEach(b => b.classList.add('active'));
@@ -226,14 +231,12 @@ langBtns.forEach(btn => {
   });
 });
 
-// ─── APPLY SAVED LANGUAGE ON LOAD ───
 if (currentLang !== 'en') {
   document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
   document.querySelectorAll(`.lang-btn[data-lang="${currentLang}"]`).forEach(b => b.classList.add('active'));
   applyLanguage(currentLang);
 }
 
-// ─── PROJECT TABS ───
 const tabBtns = document.querySelectorAll('.tab_btn');
 const panels = document.querySelectorAll('.project_panel');
 
@@ -247,7 +250,6 @@ tabBtns.forEach(btn => {
   });
 });
 
-// ─── NAV SHADOW (desktop) ───
 const nav = document.querySelector('nav');
 window.addEventListener('scroll', () => {
   if (nav) {
@@ -255,11 +257,14 @@ window.addEventListener('scroll', () => {
   }
 });
 
-// ─── BURGER MENU (mobile) ───
 const burgerBtn  = document.getElementById('burger-btn');
 const mobileNav  = document.getElementById('mobile-nav');
 const mobileLinks = document.querySelectorAll('.mobile-nav-link');
 
+/**
+ * Opens the mobile navigation overlay and locks page scroll.
+ * @returns {void}
+ */
 function openMenu() {
   burgerBtn.classList.add('open');
   mobileNav.classList.add('open');
@@ -268,6 +273,10 @@ function openMenu() {
   document.body.style.overflow = 'hidden';
 }
 
+/**
+ * Closes the mobile navigation overlay and restores page scroll.
+ * @returns {void}
+ */
 function closeMenu() {
   burgerBtn.classList.remove('open');
   mobileNav.classList.remove('open');
@@ -290,7 +299,6 @@ window.addEventListener('resize', () => {
   if (window.innerWidth > 850) closeMenu();
 });
 
-// ─── CONTACT FORM ───
 const contactForm  = document.getElementById('contact_form');
 const nameInput    = document.getElementById('contact_name');
 const emailInput   = document.getElementById('contact_email');
@@ -298,6 +306,12 @@ const messageInput = document.getElementById('contact_message');
 const checkbox     = document.getElementById('privacy');
 const sendBtn      = document.getElementById('contact_send');
 
+/**
+ * Highlights an input with an error border and displays an error message below it.
+ * @param {HTMLElement} input - The form input element to mark as invalid.
+ * @param {string} message - The error text to display.
+ * @returns {void}
+ */
 function showError(input, message) {
   input.style.borderColor = '#e74c3c';
   let error = input.parentElement.querySelector('.error_msg');
@@ -309,12 +323,22 @@ function showError(input, message) {
   error.textContent = message;
 }
 
+/**
+ * Resets an input's border colour and removes any associated error message.
+ * @param {HTMLElement} input - The form input element to clear.
+ * @returns {void}
+ */
 function clearError(input) {
   input.style.borderColor = 'var(--color-blue)';
   const error = input.parentElement.querySelector('.error_msg');
   if (error) error.remove();
 }
 
+/**
+ * Tests whether a string is a valid email address format.
+ * @param {string} email - The email string to validate.
+ * @returns {boolean} True if the email matches the expected pattern.
+ */
 function isValidEmail(email) {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 }
