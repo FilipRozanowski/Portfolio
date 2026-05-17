@@ -288,17 +288,30 @@
     /* ─── TEAMPLAYER ─── */
 
     #teamplayer_content {
-        flex-direction: column;
-        gap: 24px;
-        align-items: center;
+        flex-direction: row;
+        align-items: stretch;
+        gap: 20px;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        padding: 20px 8% 28px;
+        margin: 0 -8%;
+    }
+
+    #teamplayer_content::-webkit-scrollbar {
+        display: none;
     }
 
     .teamplayer_bubble {
-        width: 90%;
+        flex-shrink: 0;
+        width: 78vw;
+        max-width: 340px;
         height: auto;
-        min-height: 200px;
+        min-height: 260px;
         padding: 40px 28px;
         border-radius: 60% 40% 55% 45% / 50% 45% 55% 50%;
+        scroll-snap-align: center;
     }
 
     .teamplayer_name {
