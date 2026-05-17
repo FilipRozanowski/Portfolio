@@ -302,18 +302,18 @@ main h2 {
 }
 
 .project_right {
-    flex: 1;
+    flex: 1.2;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: clamp(8px, 1.3vw, 18px);
+    gap: clamp(8px, 1.3vw, 24px);
 }
 
 .project_tech {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: clamp(4px, 0.6vw, 9px);
+    gap: clamp(4px, 0.6vw, 12px);
 }
 
 .project_tech p {
@@ -323,35 +323,35 @@ main h2 {
 
 .tech_icons {
     display: flex;
-    gap: clamp(7px, 1vw, 15px);
+    gap: clamp(10px, 1.2vw, 20px);
 }
 
 .tech_icons img {
-    width: clamp(16px, 2.7vw, 45px);
-    height: clamp(16px, 2.7vw, 45px);
+    width: clamp(28px, 3.5vw, 56px);
+    height: clamp(28px, 3.5vw, 56px);
     object-fit: contain;
 }
 
 .project_preview {
     width: 100%;
-    max-width: 360px;
+    max-width: 480px;
     border-radius: 12px;
     box-shadow: 0 10px 40px rgba(0,0,0,0.4);
 }
 
 .project_btns {
     display: flex;
-    gap: clamp(7px, 1vw, 15px);
+    gap: clamp(10px, 1.2vw, 20px);
 }
 
 .btn_filled {
     background-color: var(--color-blue);
     color: var(--color-dark);
-    padding: clamp(5px, 0.8vw, 11px) clamp(10px, 1.8vw, 27px);
+    padding: clamp(10px, 1vw, 14px) clamp(24px, 2.5vw, 40px);
     border-radius: 50px;
     text-decoration: none;
     font-weight: 600;
-    font-size: clamp(9px, 0.8vw, 11px);
+    font-size: clamp(13px, 1.2vw, 18px);
     transition: opacity 0.3s ease;
 }
 
@@ -360,11 +360,11 @@ main h2 {
 .btn_outline {
     border: 2px solid var(--color-blue);
     color: var(--color-blue);
-    padding: clamp(5px, 0.8vw, 11px) clamp(10px, 1.8vw, 27px);
+    padding: clamp(10px, 1vw, 14px) clamp(24px, 2.5vw, 40px);
     border-radius: 50px;
     text-decoration: none;
     font-weight: 600;
-    font-size: clamp(9px, 0.8vw, 11px);
+    font-size: clamp(13px, 1.2vw, 18px);
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
