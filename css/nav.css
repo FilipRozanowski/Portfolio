@@ -32,7 +32,7 @@
 }
 
 .logo_nav_small p {
-    font-size: clamp(7px, 1.1vw, 15px);
+    font-size: clamp(12px, 1.1vw, 15px);
     margin: 0;
 }
 
@@ -41,7 +41,7 @@
 }
 
 .logo-nav-img {
-    width: clamp(20px, 3.8vw, 56px);
+    width: clamp(50px, 3.8vw, 56px);
     height: auto;
 }
 

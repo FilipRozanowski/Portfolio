@@ -14,8 +14,8 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
-        gap: 6px;
-        width: 36px;
+        gap: 12px;
+        width: 50px;
         height: 36px;
         cursor: pointer;
         z-index: 300;
@@ -145,7 +145,6 @@
     /* ─── HEADER ─── */
 
     header {
-        padding-top: 70px;
         min-height: 100svh;
         box-sizing: border-box;
     }
