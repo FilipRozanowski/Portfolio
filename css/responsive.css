@@ -287,7 +287,15 @@
 
     /* ─── TEAMPLAYER ─── */
 
+    /* clip the 100vw carousel so the page doesn't grow sideways */
+    main {
+        overflow-x: hidden;
+    }
+
     #teamplayer_content {
+        /* 100vw bypasses the align-items:center + overflow:auto width-collapse bug */
+        width: 100vw;
+        max-width: none;
         flex-direction: row;
         align-items: center;
         gap: 5vw;
@@ -295,9 +303,9 @@
         scroll-snap-type: x mandatory;
         -webkit-overflow-scrolling: touch;
         scrollbar-width: none;
-        width: 100%;
         padding: 20px 0 28px;
         margin-bottom: clamp(40px, 8vw, 100px);
+        justify-content: flex-start;
     }
 
     #teamplayer_content::-webkit-scrollbar {
