@@ -289,14 +289,20 @@
 
     #teamplayer_content {
         flex-direction: row;
-        align-items: stretch;
+        align-items: center;
         gap: 20px;
         overflow-x: auto;
         scroll-snap-type: x mandatory;
         -webkit-overflow-scrolling: touch;
         scrollbar-width: none;
-        padding: 20px 8% 28px;
-        margin: 0 -8%;
+        /* full-bleed: stretch to viewport width regardless of parent */
+        width: 100vw;
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+        /* symmetric padding so first and last bubble can center-snap */
+        padding: 20px 11vw 28px;
+        box-sizing: border-box;
     }
 
     #teamplayer_content::-webkit-scrollbar {
@@ -306,7 +312,6 @@
     .teamplayer_bubble {
         flex-shrink: 0;
         width: 78vw;
-        max-width: 340px;
         height: auto;
         min-height: 260px;
         padding: 40px 28px;
