@@ -109,10 +109,20 @@ const translations = {
 let currentLang = 'en';
 
 function applyLanguage(lang) {
-  document.querySelector('nav [href="#whyme_title"]').textContent = translations[lang].nav_whyme;
-  document.querySelector('nav [href="#skills_title"]').textContent = translations[lang].nav_skills;
-  document.querySelector('nav [href="#projects_title"]').textContent = translations[lang].nav_projects;
-  document.querySelector('nav [href="#contact_title"]').textContent = translations[lang].nav_contact;
+  // Desktop nav
+  const desktopNavLinks = document.querySelectorAll('nav a:not(.lang-btn)');
+  if (desktopNavLinks[0]) desktopNavLinks[0].textContent = translations[lang].nav_whyme;
+  if (desktopNavLinks[1]) desktopNavLinks[1].textContent = translations[lang].nav_skills;
+  if (desktopNavLinks[2]) desktopNavLinks[2].textContent = translations[lang].nav_projects;
+  if (desktopNavLinks[3]) desktopNavLinks[3].textContent = translations[lang].nav_contact;
+
+  // Mobile nav links
+  const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+  if (mobileNavLinks[0]) mobileNavLinks[0].textContent = translations[lang].nav_whyme;
+  if (mobileNavLinks[1]) mobileNavLinks[1].textContent = translations[lang].nav_skills;
+  if (mobileNavLinks[2]) mobileNavLinks[2].textContent = translations[lang].nav_projects;
+  if (mobileNavLinks[3]) mobileNavLinks[3].textContent = translations[lang].nav_contact;
+
   document.getElementById('whyme_title').textContent = translations[lang].whyme_title;
   document.getElementById('skills_title').textContent = translations[lang].skills_title;
   document.getElementById('projects_title').textContent = translations[lang].projects_title;
@@ -157,13 +167,15 @@ function applyLanguage(lang) {
   document.querySelector('#locate_content p').childNodes[1].textContent = translations[lang].located_text;
 }
 
-// ─── LANGUAGE BUTTONS ───
+// ─── LANGUAGE BUTTONS (desktop + mobile, alle zusammen) ───
 const langBtns = document.querySelectorAll('.lang-btn');
 langBtns.forEach(btn => {
   btn.addEventListener('click', (e) => {
     e.preventDefault();
+    // Alle lang-btns auf der ganzen Seite syncen
     langBtns.forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
+    document.querySelectorAll(`.lang-btn[data-lang="${btn.dataset.lang}"]`)
+      .forEach(b => b.classList.add('active'));
     currentLang = btn.dataset.lang;
     applyLanguage(currentLang);
   });
@@ -183,23 +195,56 @@ tabBtns.forEach(btn => {
   });
 });
 
-// ─── NAV SHADOW ───
+// ─── NAV SHADOW (desktop) ───
 const nav = document.querySelector('nav');
 window.addEventListener('scroll', () => {
-  if (window.scrollY > 0) {
-    nav.style.boxShadow = '0 4px 20px rgba(0,0,0,0.4)';
-  } else {
-    nav.style.boxShadow = 'none';
+  if (nav) {
+    nav.style.boxShadow = window.scrollY > 0 ? '0 4px 20px rgba(0,0,0,0.4)' : 'none';
   }
 });
 
+// ─── BURGER MENU (mobile) ───
+const burgerBtn  = document.getElementById('burger-btn');
+const mobileNav  = document.getElementById('mobile-nav');
+const mobileLinks = document.querySelectorAll('.mobile-nav-link');
+
+function openMenu() {
+  burgerBtn.classList.add('open');
+  mobileNav.classList.add('open');
+  burgerBtn.setAttribute('aria-expanded', 'true');
+  mobileNav.setAttribute('aria-hidden', 'false');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeMenu() {
+  burgerBtn.classList.remove('open');
+  mobileNav.classList.remove('open');
+  burgerBtn.setAttribute('aria-expanded', 'false');
+  mobileNav.setAttribute('aria-hidden', 'true');
+  document.body.style.overflow = '';
+}
+
+burgerBtn.addEventListener('click', () => {
+  mobileNav.classList.contains('open') ? closeMenu() : openMenu();
+});
+
+mobileLinks.forEach(link => link.addEventListener('click', closeMenu));
+
+mobileNav.addEventListener('click', (e) => {
+  if (e.target === mobileNav) closeMenu();
+});
+
+window.addEventListener('resize', () => {
+  if (window.innerWidth > 850) closeMenu();
+});
+
 // ─── CONTACT FORM ───
-const contactForm = document.getElementById('contact_form');
-const nameInput = document.getElementById('contact_name');
-const emailInput = document.getElementById('contact_email');
+const contactForm  = document.getElementById('contact_form');
+const nameInput    = document.getElementById('contact_name');
+const emailInput   = document.getElementById('contact_email');
 const messageInput = document.getElementById('contact_message');
-const checkbox = document.getElementById('privacy');
-const sendBtn = document.getElementById('contact_send');
+const checkbox     = document.getElementById('privacy');
+const sendBtn      = document.getElementById('contact_send');
 
 function showError(input, message) {
   input.style.borderColor = '#e74c3c';
@@ -234,7 +279,6 @@ contactForm.addEventListener('submit', (e) => {
     showError(nameInput, translations[currentLang].error_name);
     valid = false;
   }
-
   if (!emailInput.value.trim()) {
     showError(emailInput, translations[currentLang].error_email);
     valid = false;
@@ -242,12 +286,10 @@ contactForm.addEventListener('submit', (e) => {
     showError(emailInput, translations[currentLang].error_email_invalid);
     valid = false;
   }
-
   if (!messageInput.value.trim()) {
     showError(messageInput, translations[currentLang].error_message);
     valid = false;
   }
-
   if (!checkbox.checked) {
     checkbox.style.borderColor = '#e74c3c';
     valid = false;
@@ -261,9 +303,9 @@ contactForm.addEventListener('submit', (e) => {
   sendBtn.disabled = true;
 
   emailjs.send('service_gn89i8d', 'template_dqr9g9k', {
-    from_name: nameInput.value.trim(),
+    from_name:  nameInput.value.trim(),
     from_email: emailInput.value.trim(),
-    message: messageInput.value.trim()
+    message:    messageInput.value.trim()
   }).then(() => {
     sendBtn.textContent = translations[currentLang].sent;
     contactForm.reset();
