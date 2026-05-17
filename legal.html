@@ -10,57 +10,7 @@
     <link rel="stylesheet" href="./css/header.css">
     <link rel="stylesheet" href="./css/sections.css">
     <link rel="stylesheet" href="./css/responsive.css">
-    <style>
-        .legal_content {
-            width: 84%;
-            max-width: 860px;
-            margin: clamp(60px, 10vw, 120px) auto clamp(60px, 10vw, 120px);
-            color: var(--color-white);
-        }
-
-        .legal_content h1 {
-            font-size: clamp(1.8rem, 5vw, 52px);
-            color: var(--color-blue);
-            font-weight: 100;
-            margin: 0 0 clamp(32px, 5vw, 64px) 0;
-            padding: 0;
-            text-align: left;
-        }
-
-        .legal_content h2 {
-            font-size: clamp(1rem, 2vw, 20px);
-            color: var(--color-blue);
-            font-weight: 600;
-            margin: clamp(28px, 4vw, 48px) 0 8px 0;
-            padding: 0;
-            text-align: left;
-        }
-
-        .legal_content p,
-        .legal_content address {
-            font-size: clamp(13px, 1.3vw, 16px);
-            line-height: 1.8;
-            color: rgba(255, 255, 255, 0.8);
-            margin: 0 0 12px 0;
-            font-style: normal;
-        }
-
-        .legal_content a {
-            color: var(--color-blue);
-            text-decoration: none;
-            transition: opacity 0.2s ease;
-        }
-
-        .legal_content a:hover {
-            opacity: 0.75;
-        }
-
-        .legal_divider {
-            border: none;
-            border-top: 1px solid rgba(137, 188, 217, 0.15);
-            margin: clamp(28px, 4vw, 48px) 0;
-        }
-    </style>
+    <link rel="stylesheet" href="./css/legal.css">
 </head>
 
 <body>
@@ -111,9 +61,9 @@
 
     <div class="legal_content">
 
-        <h1>Legal Notice</h1>
+        <h1 data-i18n="legal_page_title">Legal Notice</h1>
 
-        <h2>Information according to § 5 TMG</h2>
+        <h2 data-i18n="legal_info_h2">Information according to § 5 TMG</h2>
         <address>
             Filip Rozanowski<br>
             Rauschenberg 15<br>
@@ -121,7 +71,7 @@
             Germany
         </address>
 
-        <h2>Contact</h2>
+        <h2 data-i18n="legal_contact_h2">Contact</h2>
         <p>
             E-mail: <a href="mailto:filip.rozanowski@gmail.com">filip.rozanowski@gmail.com</a><br>
             Tel: <a href="tel:+491636703249">0163 670 3249</a>
@@ -129,57 +79,57 @@
 
         <hr class="legal_divider">
 
-        <h2>Disclaimer</h2>
-        <p>
+        <h2 data-i18n="legal_disclaimer_h2">Disclaimer</h2>
+        <p data-i18n="legal_disclaimer_p1">
             The content of this website has been created with the utmost care. However, I cannot guarantee the
             accuracy, completeness or timeliness of the content. As a service provider, I am responsible for my
             own content on these pages in accordance with general laws pursuant to § 7 para. 1 TMG. According to
             §§ 8 to 10 TMG, however, I am not obligated as a service provider to monitor transmitted or stored
             third-party information or to investigate circumstances that indicate illegal activity.
         </p>
-        <p>
+        <p data-i18n="legal_disclaimer_p2">
             Obligations to remove or block the use of information under the general laws remain unaffected.
             However, liability in this regard is only possible from the point in time at which a concrete
             infringement of the law becomes known. If I become aware of any such infringement, I will remove
             the relevant content immediately.
         </p>
 
-        <h2>Liability for Links</h2>
-        <p>
+        <h2 data-i18n="legal_links_h2">Liability for Links</h2>
+        <p data-i18n="legal_links_p1">
             My website contains links to external third-party websites over whose content I have no influence.
             Therefore, I cannot accept any liability for this external content. The respective provider or
             operator of the linked pages is always responsible for their content. The linked pages were checked
             for possible legal violations at the time of linking. Illegal content was not identifiable at the
             time of linking.
         </p>
-        <p>
+        <p data-i18n="legal_links_p2">
             Permanent monitoring of the content of the linked pages is not reasonable without concrete
             indications of a legal violation. If I become aware of any infringement, I will remove such links
             immediately.
         </p>
 
-        <h2>Copyright</h2>
-        <p>
+        <h2 data-i18n="legal_copyright_h2">Copyright</h2>
+        <p data-i18n="legal_copyright_p1">
             The content and works on these pages created by me are subject to German copyright law. Duplication,
             processing, distribution, or any form of commercialization of such material beyond the scope of the
             copyright law requires my written consent. Downloads and copies of this site are only permitted for
             private, non-commercial use.
         </p>
-        <p>
+        <p data-i18n="legal_copyright_p2">
             Insofar as the content on this site was not created by me, the copyrights of third parties are
             respected. In particular, third-party content is marked as such. Should you nevertheless become aware
             of a copyright infringement, please inform me accordingly. If I become aware of any infringements,
             I will remove such content immediately.
         </p>
 
-        <h2>Privacy</h2>
-        <p>
+        <h2 data-i18n="legal_privacy_h2">Privacy</h2>
+        <p data-i18n="legal_privacy_p1">
             The use of this website is generally possible without providing personal data. Insofar as personal
             data (e.g. name, address or e-mail address) is collected on this website, this is always done on a
             voluntary basis as far as possible. This data will not be passed on to third parties without your
             explicit consent.
         </p>
-        <p>
+        <p data-i18n="legal_privacy_p2">
             Please note that data transmission over the Internet (e.g. when communicating by e-mail) may be
             subject to security vulnerabilities. Complete protection of data from access by third parties is
             not possible.
@@ -189,7 +139,7 @@
 
     <footer>
         <div id="footer_legal">
-            <a href="./legal.html">Legal notice</a>
+            <span class="footer_legal_current" data-i18n="legal">Legal notice</span>
             <p>© Filip Rozanowski 2026</p>
         </div>
 

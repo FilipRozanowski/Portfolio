@@ -28,6 +28,21 @@ const translations = {
     error_email_invalid: 'Please enter a valid email address.',
     error_message: 'Please enter a message.',
     legal: 'Legal notice',
+    legal_page_title: 'Legal Notice',
+    legal_info_h2: 'Information according to § 5 TMG',
+    legal_contact_h2: 'Contact',
+    legal_disclaimer_h2: 'Disclaimer',
+    legal_disclaimer_p1: 'The content of this website has been created with the utmost care. However, I cannot guarantee the accuracy, completeness or timeliness of the content. As a service provider, I am responsible for my own content on these pages in accordance with general laws pursuant to § 7 para. 1 TMG. According to §§ 8 to 10 TMG, however, I am not obligated as a service provider to monitor transmitted or stored third-party information or to investigate circumstances that indicate illegal activity.',
+    legal_disclaimer_p2: 'Obligations to remove or block the use of information under the general laws remain unaffected. However, liability in this regard is only possible from the point in time at which a concrete infringement of the law becomes known. If I become aware of any such infringement, I will remove the relevant content immediately.',
+    legal_links_h2: 'Liability for Links',
+    legal_links_p1: 'My website contains links to external third-party websites over whose content I have no influence. Therefore, I cannot accept any liability for this external content. The respective provider or operator of the linked pages is always responsible for their content. The linked pages were checked for possible legal violations at the time of linking. Illegal content was not identifiable at the time of linking.',
+    legal_links_p2: 'Permanent monitoring of the content of the linked pages is not reasonable without concrete indications of a legal violation. If I become aware of any infringement, I will remove such links immediately.',
+    legal_copyright_h2: 'Copyright',
+    legal_copyright_p1: 'The content and works on these pages created by me are subject to German copyright law. Duplication, processing, distribution, or any form of commercialization of such material beyond the scope of the copyright law requires my written consent. Downloads and copies of this site are only permitted for private, non-commercial use.',
+    legal_copyright_p2: 'Insofar as the content on this site was not created by me, the copyrights of third parties are respected. In particular, third-party content is marked as such. Should you nevertheless become aware of a copyright infringement, please inform me accordingly. If I become aware of any infringements, I will remove such content immediately.',
+    legal_privacy_h2: 'Privacy',
+    legal_privacy_p1: 'The use of this website is generally possible without providing personal data. Insofar as personal data (e.g. name, address or e-mail address) is collected on this website, this is always done on a voluntary basis as far as possible. This data will not be passed on to third parties without your explicit consent.',
+    legal_privacy_p2: 'Please note that data transmission over the Internet (e.g. when communicating by e-mail) may be subject to security vulnerabilities. Complete protection of data from access by third parties is not possible.',
     join_about: 'Task manager inspired by the Kanban System. Create and organize tasks using drag and drop, assign them to team members, track progress across columns and manage your contacts.',
     join_process: 'We split the app into clear components from the start — board, tasks, contacts and auth each had their own files and logic. We used Git to coordinate our work and kept naming and structure consistent so anyone could jump into any part of the code.',
     join_team: 'Built in a team of three, with each person owning specific features. I worked on the task board and drag & drop logic. We held regular check-ins to stay aligned and made sure no one was blocked for long — clean communication made the whole project run smoothly.',
@@ -79,6 +94,21 @@ const translations = {
     error_email_invalid: 'Bitte gib eine gültige E-Mail-Adresse ein.',
     error_message: 'Bitte gib eine Nachricht ein.',
     legal: 'Impressum',
+    legal_page_title: 'Impressum',
+    legal_info_h2: 'Angaben gemäß § 5 TMG',
+    legal_contact_h2: 'Kontakt',
+    legal_disclaimer_h2: 'Haftungsausschluss',
+    legal_disclaimer_p1: 'Die Inhalte dieser Website wurden mit größter Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte kann ich jedoch keine Gewähr übernehmen. Als Diensteanbieter bin ich gemäß § 7 Abs. 1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG bin ich als Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen.',
+    legal_disclaimer_p2: 'Verpflichtungen zur Entfernung oder Sperrung der Nutzung von Informationen nach den allgemeinen Gesetzen bleiben hiervon unberührt. Eine diesbezügliche Haftung ist jedoch erst ab dem Zeitpunkt der Kenntnis einer konkreten Rechtsverletzung möglich. Bei Bekanntwerden von entsprechenden Rechtsverletzungen werde ich diese Inhalte umgehend entfernen.',
+    legal_links_h2: 'Haftung für Links',
+    legal_links_p1: 'Meine Website enthält Links zu externen Websites Dritter, auf deren Inhalte ich keinen Einfluss habe. Deshalb kann ich für diese fremden Inhalte auch keine Gewähr übernehmen. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich. Die verlinkten Seiten wurden zum Zeitpunkt der Verlinkung auf mögliche Rechtsverstöße überprüft. Rechtswidrige Inhalte waren zum Zeitpunkt der Verlinkung nicht erkennbar.',
+    legal_links_p2: 'Eine permanente inhaltliche Kontrolle der verlinkten Seiten ist jedoch ohne konkrete Anhaltspunkte einer Rechtsverletzung nicht zumutbar. Bei Bekanntwerden von Rechtsverletzungen werde ich derartige Links umgehend entfernen.',
+    legal_copyright_h2: 'Urheberrecht',
+    legal_copyright_p1: 'Die durch mich erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen meiner schriftlichen Zustimmung. Downloads und Kopien dieser Seite sind nur für den privaten, nicht kommerziellen Gebrauch gestattet.',
+    legal_copyright_p2: 'Soweit die Inhalte auf dieser Seite nicht von mir erstellt wurden, werden die Urheberrechte Dritter beachtet. Insbesondere werden Inhalte Dritter als solche gekennzeichnet. Sollten Sie trotzdem auf eine Urheberrechtsverletzung aufmerksam werden, bitte ich um einen entsprechenden Hinweis. Bei Bekanntwerden von Rechtsverletzungen werde ich derartige Inhalte umgehend entfernen.',
+    legal_privacy_h2: 'Datenschutz',
+    legal_privacy_p1: 'Die Nutzung dieser Website ist in der Regel ohne Angabe personenbezogener Daten möglich. Soweit auf diesen Seiten personenbezogene Daten (beispielsweise Name, Anschrift oder E-Mail-Adressen) erhoben werden, erfolgt dies, soweit möglich, stets auf freiwilliger Basis. Diese Daten werden ohne Ihre ausdrückliche Zustimmung nicht an Dritte weitergegeben.',
+    legal_privacy_p2: 'Ich weise darauf hin, dass die Datenübertragung im Internet (z.B. bei der Kommunikation per E-Mail) Sicherheitslücken aufweisen kann. Ein lückenloser Schutz der Daten vor dem Zugriff durch Dritte ist nicht möglich.',
     join_about: 'Ein Aufgabenmanager inspiriert vom Kanban-System. Erstelle und organisiere Aufgaben per Drag & Drop, weise sie Teammitgliedern zu, verfolge den Fortschritt und verwalte deine Kontakte.',
     join_process: 'Wir haben die App von Anfang an in klare Komponenten aufgeteilt — Board, Aufgaben, Kontakte und Authentifizierung hatten jeweils eigene Dateien und Logik. Wir nutzten Git zur Koordination und hielten Namensgebung und Struktur konsistent.',
     join_team: 'Entwickelt in einem Dreierteam, mit klarer Aufgabenteilung. Ich war zuständig für das Task-Board und die Drag & Drop Logik. Regelmäßige Abstimmungen sorgten dafür, dass niemand lange blockiert war.',
@@ -123,6 +153,21 @@ function applyLanguage(lang) {
   if (mobileNavLinks[2]) mobileNavLinks[2].textContent = translations[lang].nav_projects;
   if (mobileNavLinks[3]) mobileNavLinks[3].textContent = translations[lang].nav_contact;
 
+  // Footer legal element (link on index, span on legal page)
+  const legalFooterEl = document.querySelector('#footer_legal a') || document.querySelector('.footer_legal_current');
+  if (legalFooterEl) legalFooterEl.textContent = translations[lang].legal;
+
+  // Generic data-i18n handler (used for legal page content)
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.dataset.i18n;
+    if (key !== 'legal' && translations[lang][key] !== undefined) {
+      el.textContent = translations[lang][key];
+    }
+  });
+
+  // Index-only translations
+  if (!document.getElementById('whyme_title')) return;
+
   document.getElementById('whyme_title').textContent = translations[lang].whyme_title;
   document.getElementById('skills_title').textContent = translations[lang].skills_title;
   document.getElementById('projects_title').textContent = translations[lang].projects_title;
@@ -136,7 +181,6 @@ function applyLanguage(lang) {
   document.querySelectorAll('.input_group label')[1].textContent = translations[lang].label_email;
   document.querySelectorAll('.input_group label')[2].textContent = translations[lang].label_message;
   document.getElementById('contact_send').textContent = translations[lang].send_btn;
-  document.querySelector('#footer_legal a').textContent = translations[lang].legal;
   document.querySelectorAll('.project_panel[data-project="join"] .project_section p')[0].textContent = translations[lang].join_about;
   document.querySelectorAll('.project_panel[data-project="join"] .project_section p')[1].textContent = translations[lang].join_process;
   document.querySelectorAll('.project_panel[data-project="join"] .project_section p')[2].textContent = translations[lang].join_team;
