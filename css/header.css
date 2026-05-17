@@ -76,7 +76,8 @@ header {
     text-align: right;
 }
 
-#arrow_top img {
+#arrow_top img,
+#arrow_top_mobile img {
     width: clamp(14px, 2.7vw, 45px);
     height: auto;
     opacity: 0.6;
@@ -84,9 +85,14 @@ header {
     transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
-#arrow_top img:hover {
+#arrow_top img:hover,
+#arrow_top_mobile img:hover {
     opacity: 1;
     transform: rotate(180deg) translateY(5px);
+}
+
+#arrow_top_mobile {
+    display: none;
 }
 
 /* ─── SOCIAL ICONS ─── */
