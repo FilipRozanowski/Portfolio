@@ -45,7 +45,7 @@ h1, h2 {
 #skills_title,
 #projects_title,
 #contact_title {
-    scroll-margin-top: clamp(70px, 8vw, 100px); /* gleiche Höhe wie die Nav */
+    scroll-margin-top: clamp(70px, 8vw, 100px);
 }
 
 /* ─── HEADER ─── */
@@ -56,7 +56,7 @@ header {
     align-items: center;
     justify-content: center;
     flex-direction: column;
-     min-height: calc(100vh - clamp(70px, 8vw, 100px));
+    min-height: calc(100vh - clamp(70px, 8vw, 100px));
     width: 100%;
 }
 
@@ -69,6 +69,11 @@ header {
     width: 50vw;
     max-width: 800px;
     height: auto;
+    transition: transform 0.5s ease;
+}
+
+#bg-shape:hover {
+    transform: rotate(-20deg);
 }
 
 #header_right {
@@ -115,6 +120,11 @@ header {
 .logo-img {
     width: clamp(50px, 5vw, 80px);
     height: auto;
+    transition: transform 0.3s ease;
+}
+
+.logo-img:hover {
+    transform: scale(1.10);
 }
 
 .logo_nav_small {
@@ -156,6 +166,24 @@ header {
 #arrow img:hover {
     opacity: 1;
     transform: translateY(5px);
+}
+
+#arrow_top {
+    display: block;
+    text-align: right;
+}
+
+#arrow_top img {
+    width: clamp(30px, 3vw, 50px);
+    height: auto;
+    opacity: 0.6;
+    transform: rotate(180deg);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+#arrow_top img:hover {
+    opacity: 1;
+    transform: rotate(180deg) translateY(5px);
 }
 
 /* ─── SOCIAL ICONS ─── */
@@ -202,7 +230,7 @@ nav {
     display: flex;
     justify-content: space-around;
     align-items: center;
-        position: sticky;
+    position: sticky;
     top: 0;
     z-index: 100;
 }
@@ -343,7 +371,7 @@ footer a:hover {
     color: var(--color-white);
 }
 
-/* ─── Skills ─── */
+/* ─── SKILLS ─── */
 
 .skills_grid {
     display: grid;
@@ -356,7 +384,6 @@ footer a:hover {
     flex-direction: column;
     align-items: center;
     gap: 8px;
-    
 }
 
 .skill_item img {
@@ -398,6 +425,13 @@ footer a:hover {
     text-align: center;
     padding: clamp(40px, 5vw, 70px);
     flex-shrink: 0;
+    transition: border-radius 0.5s ease, background-color 0.5s ease;
+}
+
+#skills_bubble:hover,
+.teamplayer_bubble:hover {
+    border-radius: 45% 55% 40% 60% / 55% 40% 60% 45%;
+    background-color: rgba(137, 188, 217, 0.2);
 }
 
 .bubble_title {
@@ -420,7 +454,7 @@ footer a:hover {
     opacity: 0.8;
 }
 
-/* ─── Teamplayer ─── */
+/* ─── TEAMPLAYER ─── */
 
 #teamplayer_content {
     display: flex;
@@ -441,6 +475,7 @@ footer a:hover {
     align-items: center;
     text-align: center;
     gap: 8px;
+    transition: border-radius 0.5s ease, background-color 0.5s ease;
 }
 
 .teamplayer_name {
@@ -480,7 +515,7 @@ footer a:hover {
     margin: 0;
 }
 
-/* ─── Projects ─── */
+/* ─── PROJECTS ─── */
 
 #project_tabs {
     display: flex;
@@ -584,7 +619,7 @@ footer a:hover {
 .tech_icons img {
     width: clamp(30px, 3vw, 50px);
     height: clamp(30px, 3vw, 50px);
-    object-fit: contain; 
+    object-fit: contain;
 }
 
 .project_preview {
@@ -632,8 +667,19 @@ footer a:hover {
     display: flex;
     flex-direction: column;
     gap: 60px;
-    max-width:800px ;
+    max-width: 900px;
     margin: auto;
+}
+
+#contact_header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+#contact_header h1 {
+    margin: 0;
+    padding: 0;
 }
 
 #contact_top {
@@ -661,18 +707,31 @@ footer a:hover {
     display: flex;
     align-items: center;
     gap: 16px;
+    text-decoration: none;
+    transition: color 0.3s ease, filter 0.3s ease;
 }
 
 .contact_info_item img {
-    width: clamp(22px, 2vw, 30px);
-    height: auto;
-    opacity: 0.8;
+    width: clamp(22px, 1.8vw, 28px);
+    height: clamp(22px, 1.8vw, 28px);
+    object-fit: contain;
+    filter: brightness(0.8) grayscale(1);
+    transition: filter 0.3s ease;
 }
 
 .contact_info_item p {
     color: var(--color-white);
     margin: 0;
     font-size: clamp(14px, 1.5vw, 18px);
+    transition: color 0.3s ease;
+}
+
+.contact_info_item:hover p {
+    color: var(--color-blue);
+}
+
+.contact_info_item:hover img {
+    filter: brightness(1) grayscale(1) sepia(1) saturate(5) hue-rotate(170deg);
 }
 
 #contact_form {
@@ -691,6 +750,8 @@ footer a:hover {
     flex-direction: column;
     gap: 8px;
     flex: 1;
+    position: relative;
+    padding-bottom: 28px;
 }
 
 .input_group label {
@@ -741,7 +802,7 @@ footer a:hover {
     width: 20px;
     height: 20px;
     border: 2px solid var(--color-blue);
-    border-radius: 50%;
+    border-radius: 60% 40% 55% 45% / 50% 45% 55% 50%;
     appearance: none;
     cursor: pointer;
     flex-shrink: 0;
@@ -778,4 +839,13 @@ footer a:hover {
 #contact_send:hover {
     background-color: var(--color-blue);
     color: var(--color-dark);
+}
+
+.error_msg {
+    color: #e74c3c;
+    font-size: clamp(11px, 1vw, 13px);
+    margin-left: 16px;
+    position: absolute;
+    bottom: 6px;
+    left: 0;
 }
