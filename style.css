@@ -855,6 +855,39 @@ footer a:hover {
 }
 
 
+/* ─── MOBILE ELEMENTS: only visible on mobile ─── */
+
+@media (min-width: 851px) {
+    #mobile-topbar,
+    #burger-btn,
+    #mobile-nav {
+        display: none !important;
+    }
+}
+
+/* ─── MOBILE TOPBAR base styles ─── */
+
+#mobile-topbar {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 200;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 20px;
+    box-sizing: border-box;
+    background-color: var(--color-bg);
+}
+
+#burger-btn {
+    display: none;
+}
+
+#mobile-nav {
+    display: none;
+}
 /* ══════════════════════════════════════════
    MOBILE BREAKPOINT — max-width: 850px
 ══════════════════════════════════════════ */
