@@ -1,0 +1,49 @@
+:root {
+    --color-bg: #1a1f2e;
+    --color-blue: #89BCD9;
+    --color-dark: #262E34;
+    --color-white: #ffffff;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* ─── FONTS ─── */
+
+@font-face {
+    font-family: 'Anta';
+    src: url('../fonts/Anta-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'JosefinSans';
+    src: url('../fonts/JosefinSans-VariableFont_wght.ttf') format('truetype');
+    font-weight: 100 900;
+    font-style: normal;
+}
+
+/* ─── BASE ─── */
+
+body {
+    margin: 0;
+    background-color: var(--color-bg);
+    font-family: 'JosefinSans', sans-serif;
+}
+
+h1, h2 {
+    font-family: 'Anta', sans-serif;
+}
+
+.blue_text {
+    color: var(--color-blue);
+}
+
+#whyme_title,
+#skills_title,
+#projects_title,
+#contact_title {
+    scroll-margin-top: clamp(40px, 7vw, 90px);
+}

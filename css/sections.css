@@ -1,0 +1,573 @@
+/* ─── MAIN ─── */
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+main h1 {
+    font-size: clamp(1.1rem, 5.3vw, 57px);
+    color: var(--color-blue);
+    font-weight: 100;
+    padding-bottom: clamp(20px, 4vw, 72px);
+    margin-top: clamp(28px, 5vw, 90px);
+    margin-bottom: 0;
+    text-align: center;
+}
+
+main h2 {
+    font-size: clamp(0.8rem, 2.7vw, 30px);
+    color: var(--color-blue);
+    font-weight: 100;
+    padding-bottom: clamp(20px, 4vw, 72px);
+    margin-top: clamp(28px, 5vw, 90px);
+    margin-bottom: 0;
+    text-align: center;
+}
+
+.main_box {
+    display: flex;
+    flex-direction: column;
+    width: 84%;
+    max-width: 1400px;
+    margin-bottom: clamp(30px, 5vw, 90px);
+}
+
+.main_box p {
+    font-size: clamp(11px, 1.3vw, 17px);
+    color: var(--color-white);
+    line-height: 1.7;
+}
+
+/* ─── WHY ME ─── */
+
+#whyme_content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: clamp(16px, 3.5vw, 54px);
+}
+
+#whyme_content p {
+    max-width: 50%;
+}
+
+#locate_content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    min-width: 50%;
+}
+
+#locate_content img {
+    width: clamp(20px, 4.5vw, 64px);
+    height: auto;
+}
+
+#locate_content p {
+    font-size: clamp(11px, 1.4vw, 27px);
+    font-weight: 600;
+    color: var(--color-white);
+    text-align: center;
+    margin: 10px 0 0 0;
+}
+
+#locate_content a {
+    color: var(--color-blue);
+    text-decoration: none;
+}
+
+/* ─── SKILLS ─── */
+
+#skills_content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: clamp(16px, 3.5vw, 54px);
+}
+
+.skills_grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: clamp(10px, 1.8vw, 27px);
+}
+
+.skill_item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: clamp(4px, 0.5vw, 8px);
+}
+
+.skill_item img {
+    width: clamp(22px, 4.5vw, 90px);
+    height: clamp(22px, 4.5vw, 90px);
+    object-fit: contain;
+    transition: transform 0.3s ease, filter 0.3s ease;
+    filter: brightness(0.8);
+}
+
+.skill_item img:hover {
+    transform: translateY(-5px);
+    filter: brightness(1.2);
+}
+
+.skill_item p {
+    color: var(--color-white);
+    font-size: clamp(7px, 1.1vw, 15px);
+    margin: 0;
+    text-align: center;
+}
+
+#skills_bubble {
+    border-radius: 60% 40% 55% 45% / 50% 45% 55% 50%;
+    width: clamp(120px, 24vw, 345px);
+    height: clamp(100px, 21vw, 308px);
+    background-color: rgba(137, 188, 217, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: clamp(16px, 4.5vw, 63px);
+    flex-shrink: 0;
+    transition: border-radius 0.5s ease, background-color 0.5s ease;
+    box-sizing: border-box;
+}
+
+#skills_bubble:hover,
+.teamplayer_bubble:hover {
+    border-radius: 45% 55% 40% 60% / 55% 40% 60% 45%;
+    background-color: rgba(137, 188, 217, 0.2);
+}
+
+.bubble_title {
+    color: var(--color-white);
+    font-size: clamp(7px, 1.1vw, 15px);
+    margin: 0 0 clamp(4px, 0.8vw, 14px) 0;
+}
+
+.bubble_icons {
+    display: flex;
+    gap: clamp(7px, 1vw, 18px);
+    margin-bottom: clamp(4px, 0.8vw, 14px);
+}
+
+.bubble_text {
+    color: var(--color-white);
+    font-size: clamp(7px, 0.9vw, 13px);
+    line-height: 1.6;
+    margin: 0;
+    opacity: 0.8;
+}
+
+/* ─── TEAMPLAYER ─── */
+
+#teamplayer_content {
+    display: flex;
+    gap: clamp(10px, 1.8vw, 27px);
+    justify-content: center;
+    align-items: center;
+}
+
+.teamplayer_bubble {
+    background-color: rgba(137, 188, 217, 0.1);
+    border-radius: 60% 40% 55% 45% / 50% 45% 55% 50%;
+    width: clamp(160px, 30vw, 435px);
+    height: clamp(90px, 25vw, 240px);
+    padding: clamp(16px, 4.5vw, 63px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: clamp(4px, 0.5vw, 8px);
+    transition: border-radius 0.5s ease, background-color 0.5s ease;
+    box-sizing: border-box;
+}
+
+.teamplayer_name {
+    color: var(--color-white);
+    font-size: clamp(10px, 1.2vw, 17px);
+    font-weight: 700;
+    margin: 0;
+    font-style: normal;
+}
+
+.teamplayer_project {
+    color: var(--color-white);
+    font-size: clamp(8px, 0.9vw, 13px);
+    margin: 0;
+    opacity: 0.7;
+    font-style: normal;
+}
+
+.teamplayer_project a {
+    color: var(--color-blue);
+    text-decoration: none;
+}
+
+.teamplayer_text {
+    color: var(--color-white);
+    font-size: clamp(7px, 0.9vw, 12px);
+    line-height: 1.6;
+    margin: clamp(3px, 0.5vw, 8px) 0;
+    opacity: 0.9;
+    font-style: italic;
+}
+
+.teamplayer_linkedin {
+    color: var(--color-blue);
+    font-size: clamp(8px, 0.9vw, 15px);
+    text-decoration: underline;
+    margin: 0;
+}
+
+/* ─── PROJECTS ─── */
+
+#project_tabs {
+    display: flex;
+    border-bottom: 2px solid rgba(137, 188, 217, 0.2);
+    margin-bottom: clamp(14px, 2vw, 36px);
+}
+
+.tab_btn {
+    background: none;
+    border: none;
+    color: rgba(137, 188, 217, 0.5);
+    font-family: 'Anta', sans-serif;
+    font-size: clamp(9px, 1.4vw, 20px);
+    padding: clamp(6px, 1vw, 15px) clamp(8px, 1.8vw, 27px);
+    cursor: pointer;
+    transition: color 0.3s ease;
+    border-bottom: 3px solid transparent;
+    margin-bottom: -2px;
+}
+
+.tab_btn:hover {
+    color: var(--color-blue);
+}
+
+.tab_btn.active {
+    color: var(--color-white);
+    background-color: var(--color-dark);
+    border-radius: 8px 8px 0 0;
+    border-bottom: 3px solid var(--color-blue);
+}
+
+.project_panel {
+    display: none;
+    gap: clamp(16px, 3.5vw, 54px);
+}
+
+.project_panel.active {
+    display: flex;
+}
+
+.project_left {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: clamp(14px, 2vw, 36px);
+}
+
+.project_section {
+    display: flex;
+    gap: clamp(7px, 1vw, 18px);
+    align-items: flex-start;
+}
+
+.project_dot {
+    width: clamp(8px, 0.8vw, 15px);
+    height: clamp(8px, 0.8vw, 15px);
+    border-radius: 50%;
+    background-color: var(--color-blue);
+    flex-shrink: 0;
+    margin-top: 4px;
+}
+
+.project_section h3 {
+    color: var(--color-white);
+    font-family: 'Anta', sans-serif;
+    font-size: clamp(10px, 1.4vw, 18px);
+    margin: 0 0 clamp(3px, 0.5vw, 8px) 0;
+}
+
+.project_duration {
+    color: rgba(255,255,255,0.5);
+    font-size: clamp(8px, 0.9vw, 15px);
+    margin-left: 10px;
+}
+
+.project_right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: clamp(8px, 1.3vw, 18px);
+}
+
+.project_tech {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: clamp(4px, 0.6vw, 9px);
+}
+
+.project_tech p {
+    color: var(--color-white);
+    margin: 0;
+}
+
+.tech_icons {
+    display: flex;
+    gap: clamp(7px, 1vw, 15px);
+}
+
+.tech_icons img {
+    width: clamp(16px, 2.7vw, 45px);
+    height: clamp(16px, 2.7vw, 45px);
+    object-fit: contain;
+}
+
+.project_preview {
+    width: 100%;
+    max-width: 360px;
+    border-radius: 12px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.4);
+}
+
+.project_btns {
+    display: flex;
+    gap: clamp(7px, 1vw, 15px);
+}
+
+.btn_filled {
+    background-color: var(--color-blue);
+    color: var(--color-dark);
+    padding: clamp(5px, 0.8vw, 11px) clamp(10px, 1.8vw, 27px);
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: clamp(9px, 0.8vw, 11px);
+    transition: opacity 0.3s ease;
+}
+
+.btn_filled:hover { opacity: 0.8; }
+
+.btn_outline {
+    border: 2px solid var(--color-blue);
+    color: var(--color-blue);
+    padding: clamp(5px, 0.8vw, 11px) clamp(10px, 1.8vw, 27px);
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: clamp(9px, 0.8vw, 11px);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn_outline:hover {
+    background-color: var(--color-blue);
+    color: var(--color-dark);
+}
+
+/* ─── CONTACT ─── */
+
+#contact_content {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(20px, 3.5vw, 54px);
+    max-width: 720px;
+    margin: auto;
+}
+
+#contact_top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: clamp(16px, 3.5vw, 54px);
+}
+
+#contact_intro {
+    max-width: 50%;
+    color: var(--color-white);
+    font-size: clamp(11px, 1.3vw, 17px);
+    line-height: 1.7;
+    margin: 0;
+}
+
+#contact_info {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(8px, 1.3vw, 18px);
+}
+
+.contact_info_item {
+    display: flex;
+    align-items: center;
+    gap: clamp(7px, 1vw, 15px);
+    text-decoration: none;
+    transition: color 0.3s ease, filter 0.3s ease;
+}
+
+.contact_info_item img {
+    width: clamp(12px, 1.7vw, 26px);
+    height: clamp(12px, 1.7vw, 26px);
+    object-fit: contain;
+    filter: brightness(0.8) grayscale(1);
+    transition: filter 0.3s ease;
+}
+
+.contact_info_item p {
+    color: var(--color-white);
+    margin: 0;
+    font-size: clamp(10px, 1.3vw, 17px);
+    transition: color 0.3s ease;
+}
+
+.contact_info_item:hover p {
+    color: var(--color-blue);
+}
+
+.contact_info_item:hover img {
+    filter: brightness(1) grayscale(1) sepia(1) saturate(5) hue-rotate(170deg);
+}
+
+#contact_form {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(8px, 1.3vw, 18px);
+}
+
+#contact_form_top {
+    display: flex;
+    gap: clamp(8px, 1.3vw, 18px);
+}
+
+.input_group {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(3px, 0.5vw, 8px);
+    flex: 1;
+    position: relative;
+    padding-bottom: clamp(14px, 1.5vw, 24px);
+}
+
+.input_group label {
+    color: var(--color-white);
+    font-size: clamp(9px, 1.1vw, 15px);
+    opacity: 0.7;
+    margin-left: clamp(7px, 1vw, 15px);
+}
+
+.input_group input,
+.input_group textarea {
+    background: transparent;
+    border: 2px solid var(--color-blue);
+    border-radius: 50px;
+    padding: clamp(7px, 1vw, 15px) clamp(10px, 1.5vw, 21px);
+    color: var(--color-white);
+    font-family: 'JosefinSans', sans-serif;
+    font-size: clamp(11px, 1.1vw, 15px);
+    outline: none;
+    transition: border-color 0.3s ease;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.input_group textarea {
+    border-radius: 24px;
+    resize: none;
+}
+
+.input_group input:focus,
+.input_group textarea:focus {
+    border-color: var(--color-white);
+}
+
+#contact_form_bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#contact_checkbox {
+    display: flex;
+    align-items: center;
+    gap: clamp(5px, 0.8vw, 11px);
+}
+
+#contact_checkbox input[type="checkbox"] {
+    width: clamp(10px, 1.3vw, 18px);
+    height: clamp(10px, 1.3vw, 18px);
+    border: 2px solid var(--color-blue);
+    border-radius: 60% 40% 55% 45% / 50% 45% 55% 50%;
+    appearance: none;
+    cursor: pointer;
+    flex-shrink: 0;
+    transition: background-color 0.3s ease;
+}
+
+#contact_checkbox input[type="checkbox"]:checked {
+    background-color: var(--color-blue);
+}
+
+#contact_checkbox label {
+    color: var(--color-white);
+    font-size: clamp(9px, 0.9vw, 14px);
+    opacity: 0.8;
+}
+
+#contact_checkbox label a {
+    color: var(--color-blue);
+    text-decoration: none;
+}
+
+#contact_send {
+    background: transparent;
+    border: 2px solid var(--color-blue);
+    color: var(--color-white);
+    font-family: 'JosefinSans', sans-serif;
+    font-size: clamp(11px, 1.1vw, 17px);
+    padding: clamp(6px, 0.8vw, 11px) clamp(14px, 2vw, 36px);
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+#contact_send:hover {
+    background-color: var(--color-blue);
+    color: var(--color-dark);
+}
+
+.error_msg {
+    color: #e74c3c;
+    font-size: clamp(8px, 0.9vw, 12px);
+    margin-left: clamp(7px, 1vw, 15px);
+    position: absolute;
+    bottom: 4px;
+    left: 0;
+}
+
+/* ─── FOOTER ─── */
+
+footer {
+    padding: clamp(14px, 4.5vw, 75px) 0;
+    background-color: var(--color-blue);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: clamp(9px, 1.1vw, 17px);
+}
+
+footer a {
+    text-decoration: none;
+    color: var(--color-dark);
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: var(--color-white);
+}

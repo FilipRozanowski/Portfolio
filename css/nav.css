@@ -1,0 +1,130 @@
+/* ─── LOGO ─── */
+
+.logo_header_small {
+    color: var(--color-white);
+    display: flex;
+    flex-direction: column;
+    font-family: 'Anta', sans-serif;
+    align-items: center;
+}
+
+.logo_header_small p {
+    font-size: clamp(7px, 1.1vw, 15px);
+    margin: 0;
+}
+
+.logo-img {
+    width: clamp(24px, 4.5vw, 75px);
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.logo-img:hover {
+    transform: scale(1.10);
+}
+
+.logo_nav_small {
+    color: var(--color-white);
+    display: flex;
+    flex-direction: column;
+    font-family: 'Anta', sans-serif;
+    align-items: center;
+}
+
+.logo_nav_small p {
+    font-size: clamp(7px, 1.1vw, 15px);
+    margin: 0;
+}
+
+.logo_nav_small .blue_text {
+    color: var(--color-dark);
+}
+
+.logo-nav-img {
+    width: clamp(20px, 3.8vw, 56px);
+    height: auto;
+}
+
+/* ─── DESKTOP NAV ─── */
+
+nav {
+    background-color: var(--color-blue);
+    height: clamp(40px, 7vw, 90px);
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+nav a {
+    color: var(--color-dark);
+    font-family: 'JosefinSans', sans-serif;
+    font-size: clamp(9px, 1.5vw, 22px);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: var(--color-white);
+}
+
+/* ─── LANGUAGE BUTTONS ─── */
+
+.lang-btn {
+    color: var(--color-dark);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+    padding: clamp(2px, 0.3vw, 4px) clamp(5px, 0.8vw, 12px);
+}
+
+.lang-btn.active {
+    background-color: rgba(255, 255, 255, 0.25);
+    border-radius: 50%;
+    padding: clamp(2px, 0.3vw, 4px) clamp(5px, 0.8vw, 12px);
+    color: var(--color-white);
+}
+
+.lang-btn:hover {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+/* ─── MOBILE ELEMENTS: hidden on desktop ─── */
+
+@media (min-width: 851px) {
+    #mobile-topbar,
+    #burger-btn,
+    #mobile-nav {
+        display: none !important;
+    }
+}
+
+/* ─── MOBILE TOPBAR ─── */
+
+#mobile-topbar {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 200;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 20px;
+    box-sizing: border-box;
+    background-color: var(--color-bg);
+}
+
+#burger-btn {
+    display: none;
+}
+
+/* ─── MOBILE NAV ─── */
+
+#mobile-nav {
+    display: none;
+}
