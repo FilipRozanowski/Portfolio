@@ -61,9 +61,16 @@
         pointer-events: none;
     }
 
+    @keyframes blob-morph {
+        0%   { border-radius: 60% 40% 55% 45% / 50% 45% 55% 50%; }
+        33%  { border-radius: 45% 55% 40% 60% / 55% 40% 60% 45%; }
+        66%  { border-radius: 55% 45% 60% 40% / 45% 60% 40% 55%; }
+        100% { border-radius: 60% 40% 55% 45% / 50% 45% 55% 50%; }
+    }
+
     #mobile-nav-blob {
         background-color: var(--color-blue);
-        border-radius: 50%;
+        border-radius: 60% 40% 55% 45% / 50% 45% 55% 50%;
         width: 500px;
         height: 500px;
         margin-top: -10vh;
@@ -89,6 +96,7 @@
         transform: scale(1);
         opacity: 1;
         pointer-events: all;
+        animation: blob-morph 6s ease-in-out infinite;
     }
 
     #mobile-nav-blob a {
