@@ -311,54 +311,56 @@ function isValidEmail(email) {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 }
 
-[nameInput, emailInput, messageInput].forEach(input => {
-  input.addEventListener('input', () => clearError(input));
-});
-
-contactForm.addEventListener('submit', (e) => {
-  e.preventDefault();
-  let valid = true;
-
-  if (!nameInput.value.trim()) {
-    showError(nameInput, translations[currentLang].error_name);
-    valid = false;
-  }
-  if (!emailInput.value.trim()) {
-    showError(emailInput, translations[currentLang].error_email);
-    valid = false;
-  } else if (!isValidEmail(emailInput.value.trim())) {
-    showError(emailInput, translations[currentLang].error_email_invalid);
-    valid = false;
-  }
-  if (!messageInput.value.trim()) {
-    showError(messageInput, translations[currentLang].error_message);
-    valid = false;
-  }
-  if (!checkbox.checked) {
-    checkbox.style.borderColor = '#e74c3c';
-    valid = false;
-  } else {
-    checkbox.style.borderColor = 'var(--color-blue)';
-  }
-
-  if (!valid) return;
-
-  sendBtn.textContent = translations[currentLang].sending;
-  sendBtn.disabled = true;
-
-  emailjs.send('service_gn89i8d', 'template_dqr9g9k', {
-    from_name:  nameInput.value.trim(),
-    from_email: emailInput.value.trim(),
-    message:    messageInput.value.trim()
-  }).then(() => {
-    sendBtn.textContent = translations[currentLang].sent;
-    contactForm.reset();
-    setTimeout(() => {
-      sendBtn.textContent = translations[currentLang].send_btn;
-      sendBtn.disabled = false;
-    }, 3000);
-  }).catch(() => {
-    sendBtn.textContent = translations[currentLang].error_send;
-    sendBtn.disabled = false;
+if (contactForm) {
+  [nameInput, emailInput, messageInput].forEach(input => {
+    input.addEventListener('input', () => clearError(input));
   });
-});
+
+  contactForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    let valid = true;
+
+    if (!nameInput.value.trim()) {
+      showError(nameInput, translations[currentLang].error_name);
+      valid = false;
+    }
+    if (!emailInput.value.trim()) {
+      showError(emailInput, translations[currentLang].error_email);
+      valid = false;
+    } else if (!isValidEmail(emailInput.value.trim())) {
+      showError(emailInput, translations[currentLang].error_email_invalid);
+      valid = false;
+    }
+    if (!messageInput.value.trim()) {
+      showError(messageInput, translations[currentLang].error_message);
+      valid = false;
+    }
+    if (!checkbox.checked) {
+      checkbox.style.borderColor = '#e74c3c';
+      valid = false;
+    } else {
+      checkbox.style.borderColor = 'var(--color-blue)';
+    }
+
+    if (!valid) return;
+
+    sendBtn.textContent = translations[currentLang].sending;
+    sendBtn.disabled = true;
+
+    emailjs.send('service_gn89i8d', 'template_dqr9g9k', {
+      from_name:  nameInput.value.trim(),
+      from_email: emailInput.value.trim(),
+      message:    messageInput.value.trim()
+    }).then(() => {
+      sendBtn.textContent = translations[currentLang].sent;
+      contactForm.reset();
+      setTimeout(() => {
+        sendBtn.textContent = translations[currentLang].send_btn;
+        sendBtn.disabled = false;
+      }, 3000);
+    }).catch(() => {
+      sendBtn.textContent = translations[currentLang].error_send;
+      sendBtn.disabled = false;
+    });
+  });
+}
