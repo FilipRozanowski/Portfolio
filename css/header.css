@@ -15,15 +15,33 @@ header {
     align-items: center;
 }
 
-#bg-shape {
+#bg-shape-container {
+    position: relative;
     width: 40vw;
     max-width: 600px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+#bg-shape {
+    width: 100%;
     height: auto;
     transition: transform 0.5s ease;
 }
 
-#bg-shape:hover {
+#bg-shape-container:hover #bg-shape {
     transform: rotate(-20deg);
+}
+
+#filip-photo {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    height: auto;
+    object-fit: contain;
 }
 
 #header_right {
