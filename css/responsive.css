@@ -147,6 +147,7 @@
     header {
         min-height: 100svh;
         box-sizing: border-box;
+        justify-content: center;
     }
 
     #header_top {

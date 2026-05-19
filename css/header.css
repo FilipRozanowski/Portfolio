@@ -4,7 +4,7 @@ header {
     position: relative;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-end;
     flex-direction: column;
     min-height: calc(100vh - clamp(40px, 7vw, 90px));
     width: 100%;
@@ -12,7 +12,7 @@ header {
 
 #header_top {
     display: flex;
-    align-items: center;
+    align-items: flex-end;
 }
 
 #bg-shape-container {
@@ -49,6 +49,7 @@ header {
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
+    align-self: center;
     height: 80%;
 }
 
