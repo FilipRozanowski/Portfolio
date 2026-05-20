@@ -25,7 +25,7 @@
 
 .legal_content p,
 .legal_content address {
-    font-size: clamp(13px, 1.3vw, 16px);
+    font-size: clamp(15px, 1.3vw, 17px);
     line-height: 1.8;
     color: rgba(255, 255, 255, 0.8);
     margin: 0 0 12px 0;
