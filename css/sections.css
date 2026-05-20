@@ -17,7 +17,7 @@ main h1 {
 }
 
 main h2 {
-    font-size: clamp(0.8rem, 2.7vw, 30px);
+    font-size: clamp(1rem, 2.7vw, 30px);
     color: var(--color-blue);
     font-weight: 100;
     padding-bottom: clamp(20px, 4vw, 72px);
@@ -35,7 +35,7 @@ main h2 {
 }
 
 .main_box p {
-    font-size: clamp(11px, 1.3vw, 17px);
+    font-size: clamp(16px, 1.3vw, 18px);
     color: var(--color-white);
     line-height: 1.7;
 }
@@ -67,7 +67,7 @@ main h2 {
 }
 
 #locate_content p {
-    font-size: clamp(11px, 1.4vw, 27px);
+    font-size: clamp(16px, 1.4vw, 27px);
     font-weight: 600;
     color: var(--color-white);
     text-align: center;
@@ -102,8 +102,8 @@ main h2 {
 }
 
 .skill_item img {
-    width: clamp(22px, 4.5vw, 90px);
-    height: clamp(22px, 4.5vw, 90px);
+    width: clamp(44px, 4.5vw, 90px);
+    height: clamp(44px, 4.5vw, 90px);
     object-fit: contain;
     transition: transform 0.3s ease, filter 0.3s ease;
     filter: brightness(0.8);
@@ -116,7 +116,7 @@ main h2 {
 
 .skill_item p {
     color: var(--color-white);
-    font-size: clamp(7px, 1.1vw, 15px);
+    font-size: clamp(13px, 1.1vw, 15px);
     margin: 0;
     text-align: center;
 }
@@ -145,7 +145,7 @@ main h2 {
 
 .bubble_title {
     color: var(--color-white);
-    font-size: clamp(7px, 1.1vw, 15px);
+    font-size: clamp(13px, 1.1vw, 15px);
     margin: 0 0 clamp(4px, 0.8vw, 14px) 0;
 }
 
@@ -157,7 +157,7 @@ main h2 {
 
 .bubble_text {
     color: var(--color-white);
-    font-size: clamp(7px, 0.9vw, 13px);
+    font-size: clamp(12px, 0.9vw, 14px);
     line-height: 1.6;
     margin: 0;
     opacity: 0.8;
@@ -193,7 +193,7 @@ main h2 {
 
 .teamplayer_name {
     color: var(--color-white);
-    font-size: clamp(10px, 1.2vw, 17px);
+    font-size: clamp(15px, 1.2vw, 17px);
     font-weight: 700;
     margin: 0;
     font-style: normal;
@@ -201,7 +201,7 @@ main h2 {
 
 .teamplayer_project {
     color: var(--color-white);
-    font-size: clamp(8px, 0.9vw, 13px);
+    font-size: clamp(13px, 0.9vw, 14px);
     margin: 0;
     opacity: 0.7;
     font-style: normal;
@@ -214,7 +214,7 @@ main h2 {
 
 .teamplayer_text {
     color: var(--color-white);
-    font-size: clamp(7px, 0.9vw, 12px);
+    font-size: clamp(13px, 0.9vw, 14px);
     line-height: 1.6;
     margin: clamp(3px, 0.5vw, 8px) 0;
     opacity: 0.9;
@@ -223,7 +223,7 @@ main h2 {
 
 .teamplayer_linkedin {
     color: var(--color-blue);
-    font-size: clamp(8px, 0.9vw, 15px);
+    font-size: clamp(13px, 0.9vw, 15px);
     text-decoration: underline;
     margin: 0;
 }
@@ -241,7 +241,7 @@ main h2 {
     border: none;
     color: rgba(137, 188, 217, 0.5);
     font-family: 'Anta', sans-serif;
-    font-size: clamp(9px, 1.4vw, 20px);
+    font-size: clamp(13px, 1.4vw, 20px);
     padding: clamp(6px, 1vw, 15px) clamp(8px, 1.8vw, 27px);
     cursor: pointer;
     transition: color 0.3s ease;
@@ -294,13 +294,13 @@ main h2 {
 .project_section h3 {
     color: var(--color-white);
     font-family: 'Anta', sans-serif;
-    font-size: clamp(10px, 1.4vw, 18px);
+    font-size: clamp(14px, 1.4vw, 18px);
     margin: 0 0 clamp(3px, 0.5vw, 8px) 0;
 }
 
 .project_duration {
     color: rgba(255,255,255,0.5);
-    font-size: clamp(8px, 0.9vw, 15px);
+    font-size: clamp(13px, 0.9vw, 15px);
     margin-left: 10px;
 }
 
@@ -396,7 +396,7 @@ main h2 {
 #contact_intro {
     max-width: 50%;
     color: var(--color-white);
-    font-size: clamp(11px, 1.3vw, 17px);
+    font-size: clamp(16px, 1.3vw, 18px);
     line-height: 1.7;
     margin: 0;
 }
@@ -426,7 +426,7 @@ main h2 {
 .contact_info_item p {
     color: var(--color-white);
     margin: 0;
-    font-size: clamp(10px, 1.3vw, 17px);
+    font-size: clamp(15px, 1.3vw, 17px);
     transition: color 0.3s ease;
 }
 
@@ -460,7 +460,7 @@ main h2 {
 
 .input_group label {
     color: var(--color-white);
-    font-size: clamp(9px, 1.1vw, 15px);
+    font-size: clamp(13px, 1.1vw, 15px);
     opacity: 0.7;
     margin-left: clamp(7px, 1vw, 15px);
 }
@@ -473,7 +473,7 @@ main h2 {
     padding: clamp(7px, 1vw, 15px) clamp(10px, 1.5vw, 21px);
     color: var(--color-white);
     font-family: 'JosefinSans', sans-serif;
-    font-size: clamp(11px, 1.1vw, 15px);
+    font-size: clamp(14px, 1.1vw, 16px);
     outline: none;
     transition: border-color 0.3s ease;
     width: 100%;
@@ -519,7 +519,7 @@ main h2 {
 
 #contact_checkbox label {
     color: var(--color-white);
-    font-size: clamp(9px, 0.9vw, 14px);
+    font-size: clamp(13px, 0.9vw, 14px);
     opacity: 0.8;
 }
 
@@ -533,7 +533,7 @@ main h2 {
     border: 2px solid var(--color-blue);
     color: var(--color-white);
     font-family: 'JosefinSans', sans-serif;
-    font-size: clamp(11px, 1.1vw, 17px);
+    font-size: clamp(14px, 1.1vw, 17px);
     padding: clamp(6px, 0.8vw, 11px) clamp(14px, 2vw, 36px);
     border-radius: 50px;
     cursor: pointer;
@@ -547,7 +547,7 @@ main h2 {
 
 .error_msg {
     color: #e74c3c;
-    font-size: clamp(8px, 0.9vw, 12px);
+    font-size: clamp(12px, 0.9vw, 13px);
     margin-left: clamp(7px, 1vw, 15px);
     position: absolute;
     bottom: 4px;
@@ -562,7 +562,7 @@ footer {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    font-size: clamp(9px, 1.1vw, 17px);
+    font-size: clamp(14px, 1.1vw, 17px);
 }
 
 footer a {
