@@ -330,8 +330,8 @@ main h2 {
 }
 
 .tech_icons img {
-    width: clamp(28px, 3.5vw, 56px);
-    height: clamp(28px, 3.5vw, 56px);
+    width: clamp(48px, 3.5vw, 64px);
+    height: clamp(48px, 3.5vw, 64px);
     object-fit: contain;
 }
 

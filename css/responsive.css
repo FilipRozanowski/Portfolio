@@ -274,6 +274,10 @@
         height: clamp(48px, 12vw, 70px);
     }
 
+    .skill_item p {
+        font-size: clamp(14px, 3.5vw, 16px);
+    }
+
     #skills_bubble {
         width: 90%;
         height: auto;
@@ -282,12 +286,12 @@
     }
 
     .bubble_title {
-        font-size: clamp(13px, 3.5vw, 18px);
+        font-size: clamp(16px, 4vw, 20px);
         margin-bottom: 12px;
     }
 
     .bubble_text {
-        font-size: clamp(12px, 3vw, 16px);
+        font-size: clamp(15px, 3.5vw, 17px);
     }
 
     /* ─── TEAMPLAYER ─── */
@@ -340,7 +344,7 @@
     .teamplayer_project,
     .teamplayer_text,
     .teamplayer_linkedin {
-        font-size: clamp(12px, 3vw, 16px);
+        font-size: clamp(14px, 3.5vw, 17px);
     }
 
     /* ─── PROJECTS ─── */
@@ -381,8 +385,8 @@
     }
 
     .tech_icons img {
-        width: clamp(28px, 7vw, 44px);
-        height: clamp(28px, 7vw, 44px);
+        width: clamp(52px, 10vw, 64px);
+        height: clamp(52px, 10vw, 64px);
     }
 
     .project_preview {
