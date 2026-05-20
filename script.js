@@ -31,6 +31,20 @@ const translations = {
     error_email_invalid: 'Please enter a valid email address.',
     error_message: 'Please enter a message.',
     legal: 'Legal notice',
+    privacy: 'Privacy Policy',
+    privacy_page_title: 'Privacy Policy',
+    privacy_controller_h2: 'Controller',
+    privacy_form_h2: 'Contact Form',
+    privacy_form_p1: 'When you use the contact form on this website, the data you enter — your name, e-mail address and message — is processed to answer your inquiry. By checking the consent box, you voluntarily agree to this processing. The legal basis is your consent pursuant to Art. 6(1)(a) GDPR.',
+    privacy_form_p2: 'Your data is used solely to respond to your message. It is not shared with third parties for other purposes, sold, or used for marketing. Once your inquiry has been fully resolved, the related data is deleted unless legal retention obligations require otherwise.',
+    privacy_emailjs_h2: 'Email Service — EmailJS',
+    privacy_emailjs_p1: 'This website uses EmailJS to transmit contact form submissions. EmailJS acts as a data processor and forwards your message to my e-mail inbox via their servers. The transmission is encrypted. EmailJS is operated by Elastic Email Inc. and is bound by a data processing agreement. For details, see the EmailJS privacy policy at emailjs.com.',
+    privacy_retention_h2: 'Data Retention',
+    privacy_retention_p1: 'Contact form data is stored only for as long as necessary to handle your inquiry. After the inquiry is resolved, the data is deleted. E-mails may be subject to legal retention obligations of up to ten years under German commercial and tax law.',
+    privacy_rights_h2: 'Your Rights',
+    privacy_rights_p1: 'Under the GDPR you have the right to access, rectify, erase, restrict and port your personal data, and to object to its processing. You may also withdraw your consent at any time with effect for the future. To exercise any of these rights, please contact me at filip.rozanowski@gmail.com.',
+    privacy_authority_h2: 'Supervisory Authority',
+    privacy_authority_p1: 'You have the right to lodge a complaint with a data protection supervisory authority. The authority competent for North Rhine-Westphalia is the Landesbeauftragte für Datenschutz und Informationsfreiheit Nordrhein-Westfalen (LDI NRW), Kavalleriestraße 2–4, 40213 Düsseldorf, Germany.',
     legal_page_title: 'Legal Notice',
     legal_info_h2: 'Information according to § 5 TMG',
     legal_contact_h2: 'Contact',
@@ -97,6 +111,20 @@ const translations = {
     error_email_invalid: 'Bitte gib eine gültige E-Mail-Adresse ein.',
     error_message: 'Bitte gib eine Nachricht ein.',
     legal: 'Impressum',
+    privacy: 'Datenschutzerklärung',
+    privacy_page_title: 'Datenschutzerklärung',
+    privacy_controller_h2: 'Verantwortlicher',
+    privacy_form_h2: 'Kontaktformular',
+    privacy_form_p1: 'Wenn du das Kontaktformular auf dieser Website nutzt, werden die von dir eingegebenen Daten — Name, E-Mail-Adresse und Nachricht — zur Beantwortung deiner Anfrage verarbeitet. Durch das Ankreuzen der Einwilligungsbox stimmst du dieser Verarbeitung freiwillig zu. Rechtsgrundlage ist deine Einwilligung gemäß Art. 6 Abs. 1 lit. a DSGVO.',
+    privacy_form_p2: 'Deine Daten werden ausschließlich zur Beantwortung deiner Nachricht verwendet. Eine Weitergabe an Dritte zu anderen Zwecken, ein Verkauf oder eine Nutzung für Werbezwecke findet nicht statt. Nach vollständiger Bearbeitung deiner Anfrage werden die Daten gelöscht, sofern keine gesetzlichen Aufbewahrungspflichten entgegenstehen.',
+    privacy_emailjs_h2: 'E-Mail-Dienst — EmailJS',
+    privacy_emailjs_p1: 'Diese Website nutzt EmailJS zur Übertragung von Kontaktformular-Eingaben. EmailJS fungiert als Auftragsverarbeiter und leitet deine Nachricht über deren Server an mein E-Mail-Postfach weiter. Die Übertragung erfolgt verschlüsselt. EmailJS wird von Elastic Email Inc. betrieben und ist durch einen Auftragsverarbeitungsvertrag gebunden. Weitere Informationen findest du in der Datenschutzerklärung von EmailJS unter emailjs.com.',
+    privacy_retention_h2: 'Datenspeicherung',
+    privacy_retention_p1: 'Kontaktformulardaten werden nur so lange gespeichert, wie es zur Bearbeitung deiner Anfrage erforderlich ist. Nach Abschluss der Anfrage werden die Daten gelöscht. E-Mails können gesetzlichen Aufbewahrungsfristen von bis zu zehn Jahren nach deutschem Handels- und Steuerrecht unterliegen.',
+    privacy_rights_h2: 'Deine Rechte',
+    privacy_rights_p1: 'Gemäß DSGVO hast du das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung und Datenübertragbarkeit sowie das Recht auf Widerspruch gegen die Verarbeitung. Du kannst deine Einwilligung jederzeit mit Wirkung für die Zukunft widerrufen. Zur Ausübung dieser Rechte wende dich bitte an filip.rozanowski@gmail.com.',
+    privacy_authority_h2: 'Aufsichtsbehörde',
+    privacy_authority_p1: 'Du hast das Recht, eine Beschwerde bei einer Datenschutzaufsichtsbehörde einzureichen. Die zuständige Behörde für Nordrhein-Westfalen ist die Landesbeauftragte für Datenschutz und Informationsfreiheit Nordrhein-Westfalen (LDI NRW), Kavalleriestraße 2–4, 40213 Düsseldorf.',
     legal_page_title: 'Impressum',
     legal_info_h2: 'Angaben gemäß § 5 TMG',
     legal_contact_h2: 'Kontakt',
@@ -163,7 +191,7 @@ function applyLanguage(lang) {
   if (mobileNavLinks[2]) mobileNavLinks[2].textContent = translations[lang].nav_projects;
   if (mobileNavLinks[3]) mobileNavLinks[3].textContent = translations[lang].nav_contact;
 
-  const legalFooterEl = document.querySelector('#footer_legal a') || document.querySelector('.footer_legal_current');
+  const legalFooterEl = document.querySelector('#footer_legal [data-i18n="legal"]');
   if (legalFooterEl) legalFooterEl.textContent = translations[lang].legal;
 
   document.querySelectorAll('[data-i18n]').forEach(el => {
