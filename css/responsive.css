@@ -230,7 +230,7 @@
     }
 
     .main_box p {
-        font-size: clamp(15px, 3.5vw, 18px);
+        font-size: clamp(16px, 3.5vw, 18px);
     }
 
     /* ─── WHY ME ─── */
@@ -257,7 +257,7 @@
     }
 
     #locate_content p {
-        font-size: clamp(14px, 4vw, 22px);
+        font-size: clamp(16px, 4vw, 22px);
     }
 
     /* ─── SKILLS ─── */
@@ -279,7 +279,7 @@
     }
 
     .skill_item p {
-        font-size: clamp(14px, 3.5vw, 16px);
+        font-size: clamp(16px, 3.5vw, 18px);
     }
 
     #skills_bubble {
@@ -295,7 +295,7 @@
     }
 
     .bubble_text {
-        font-size: clamp(15px, 3.5vw, 17px);
+        font-size: clamp(16px, 3.5vw, 17px);
     }
 
     /* ─── TEAMPLAYER ─── */
@@ -342,13 +342,13 @@
     }
 
     .teamplayer_name {
-        font-size: clamp(15px, 4vw, 20px);
+        font-size: clamp(16px, 4vw, 20px);
     }
 
     .teamplayer_project,
     .teamplayer_text,
     .teamplayer_linkedin {
-        font-size: clamp(14px, 3.5vw, 17px);
+        font-size: clamp(16px, 3.5vw, 17px);
     }
 
     /* ─── PROJECTS ─── */
@@ -360,7 +360,7 @@
     }
 
     .tab_btn {
-        font-size: clamp(11px, 3.5vw, 18px);
+        font-size: clamp(16px, 3.5vw, 18px);
         padding: 10px 16px;
     }
 
@@ -374,11 +374,11 @@
     }
 
     .project_section h3 {
-        font-size: clamp(13px, 3.8vw, 20px);
+        font-size: clamp(16px, 3.8vw, 20px);
     }
 
     .project_duration {
-        font-size: clamp(11px, 3vw, 16px);
+        font-size: clamp(16px, 3vw, 18px);
         display: block;
         margin-left: 0;
         margin-top: 4px;
@@ -389,8 +389,8 @@
     }
 
     .tech_icons img {
-        width: clamp(52px, 10vw, 64px);
-        height: clamp(52px, 10vw, 64px);
+        width: clamp(64px, 13vw, 80px);
+        height: clamp(64px, 13vw, 80px);
     }
 
     .project_preview {
@@ -400,7 +400,7 @@
     .btn_filled,
     .btn_outline {
         padding: 10px 24px;
-        font-size: clamp(13px, 3.5vw, 17px);
+        font-size: clamp(16px, 3.5vw, 17px);
     }
 
     /* ─── CONTACT ─── */
@@ -420,7 +420,7 @@
     }
 
     .contact_info_item p {
-        font-size: clamp(12px, 3.5vw, 17px);
+        font-size: clamp(16px, 3.5vw, 17px);
         word-break: break-all;
     }
 
@@ -436,12 +436,12 @@
 
     .input_group input,
     .input_group textarea {
-        font-size: clamp(13px, 3.5vw, 17px);
+        font-size: clamp(16px, 3.5vw, 17px);
         padding: 14px 20px;
     }
 
     .input_group label {
-        font-size: clamp(12px, 3vw, 16px);
+        font-size: clamp(16px, 3vw, 17px);
         margin-left: 14px;
     }
 
@@ -453,12 +453,12 @@
 
     #contact_send {
         width: 100%;
-        font-size: clamp(14px, 4vw, 18px);
+        font-size: clamp(16px, 4vw, 18px);
         padding: 14px 0;
     }
 
     #contact_checkbox label {
-        font-size: clamp(13px, 3vw, 14px);
+        font-size: clamp(16px, 3vw, 17px);
     }
 
     /* ─── FOOTER ─── */
@@ -468,7 +468,7 @@
         gap: 20px;
         padding: 32px 20px;
         text-align: center;
-        font-size: clamp(14px, 3.5vw, 16px);
+        font-size: clamp(16px, 3.5vw, 17px);
     }
 
     #footer_legal {
