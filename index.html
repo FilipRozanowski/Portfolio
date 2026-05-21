@@ -10,11 +10,15 @@
     <link rel="stylesheet" href="./css/nav.css">
     <link rel="stylesheet" href="./css/header.css">
     <link rel="stylesheet" href="./css/sections.css">
+    <link rel="stylesheet" href="./css/skills.css">
+    <link rel="stylesheet" href="./css/projects.css">
+    <link rel="stylesheet" href="./css/contact.css">
+    <link rel="stylesheet" href="./css/footer.css">
+    <link rel="stylesheet" href="./css/responsive-nav.css">
     <link rel="stylesheet" href="./css/responsive.css">
 </head>
 
 <body>
-
 
     <div id="mobile-topbar">
         <div class="logo_nav_small">
@@ -28,12 +32,13 @@
             <span></span>
         </button>
     </div>
+
     <div id="mobile-nav" role="navigation" aria-hidden="true">
         <div id="mobile-nav-blob">
-            <a href="#whyme_title" class="mobile-nav-link">Why me</a>
-            <a href="#skills_title" class="mobile-nav-link">Skills</a>
-            <a href="#projects_title" class="mobile-nav-link">Projects</a>
-            <a href="#contact_title" class="mobile-nav-link">Contact</a>
+            <a href="#whyme_title" class="mobile-nav-link" data-i18n="nav_whyme">Why me</a>
+            <a href="#skills_title" class="mobile-nav-link" data-i18n="nav_skills">Skills</a>
+            <a href="#projects_title" class="mobile-nav-link" data-i18n="nav_projects">Projects</a>
+            <a href="#contact_title" class="mobile-nav-link" data-i18n="nav_contact">Contact</a>
             <div class="mobile-lang">
                 <a href="#" class="lang-btn" data-lang="de">DE</a>
                 <a href="#" class="lang-btn active" data-lang="en">EN</a>
@@ -82,10 +87,10 @@
             <p class="blue_text">developer</p>
         </div>
 
-        <a href="#whyme_title">Why me</a>
-        <a href="#skills_title">Skills</a>
-        <a href="#projects_title">Projects</a>
-        <a href="#contact_title">Contact</a>
+        <a href="#whyme_title" data-i18n="nav_whyme">Why me</a>
+        <a href="#skills_title" data-i18n="nav_skills">Skills</a>
+        <a href="#projects_title" data-i18n="nav_projects">Projects</a>
+        <a href="#contact_title" data-i18n="nav_contact">Contact</a>
 
         <div id="lang_select">
             <a href="#" class="lang-btn" data-lang="de">DE</a>
@@ -95,13 +100,13 @@
 
     <main>
         <div class="main_box">
-            <h1 id="whyme_title">Why me</h1>
+            <h1 id="whyme_title" data-i18n="whyme_title">Why me</h1>
             <div id="whyme_content">
                 <div id="locate_content">
                     <img src="./imgs/svgs/locate icon.svg">
-                    <p><a href="">I am </a>located in Ense..|</p>
+                    <p><a href="" data-i18n="located_link">I am </a><span data-i18n="located_text">located in Ense..|</span></p>
                 </div>
-                <p>I'm not just someone who codes to get things done — I actually care about the details. When something
+                <p data-i18n="whyme_text">I'm not just someone who codes to get things done — I actually care about the details. When something
                     doesn't look right or could work better, it bothers me until I fix it. I'm the kind of person who
                     looks up why something works, not just that it works. I like to keep my code clean and think about
                     how others might read it later. I'm still learning, but I pick things up fast and I don't give up
@@ -110,7 +115,7 @@
         </div>
 
         <div class="main_box">
-            <h1 id="skills_title">My Skills</h1>
+            <h1 id="skills_title" data-i18n="skills_title">My Skills</h1>
             <div id="skills_content">
                 <div class="skills_grid">
                     <div class="skill_item">
@@ -131,25 +136,25 @@
                 </div>
 
                 <div id="skills_bubble">
-                    <p class="bubble_title">I am currently learning</p>
+                    <p class="bubble_title" data-i18n="bubble_title">I am currently learning</p>
                     <div class="bubble_icons">
                         <div class="skill_item">
                             <img src="./imgs/svgs/type-icon.svg">
                         </div>
                     </div>
-                    <p class="bubble_text">Motivated to continually improve my skills and stay up to date with new
+                    <p class="bubble_text" data-i18n="bubble_text">Motivated to continually improve my skills and stay up to date with new
                         technologies.</p>
                 </div>
             </div>
         </div>
 
         <div class="main_box">
-            <h1 id="projects_title">My Projects</h1>
+            <h1 id="projects_title" data-i18n="projects_title">My Projects</h1>
             <div id="projects_content">
                 <div id="project_tabs">
-                    <button class="tab_btn active" data-project="join">1. Join</button>
-                    <button class="tab_btn" data-project="el pollo loco">2. El pollo loco</button>
-                    <button class="tab_btn" data-project="pokedex">3. Pokedex</button>
+                    <button class="tab_btn active" data-project="join">Join</button>
+                    <button class="tab_btn" data-project="el pollo loco">El pollo loco</button>
+                    <button class="tab_btn" data-project="pokedex">Pokedex</button>
                 </div>
 
                 <div id="project_panels">
@@ -159,8 +164,8 @@
                             <div class="project_section">
                                 <span class="project_dot"></span>
                                 <div>
-                                    <h3>About the project <span class="project_duration">Duration: 4 weeks</span></h3>
-                                    <p>Task manager inspired by the Kanban System. Create and organize tasks using drag
+                                    <h3><span data-i18n="about_project">About the project</span> <span class="project_duration" data-i18n="duration_join">Duration: 4 weeks</span></h3>
+                                    <p data-i18n="join_about">Task manager inspired by the Kanban System. Create and organize tasks using drag
                                         and drop, assign them to team members, track progress across columns and manage
                                         your contacts.</p>
                                 </div>
@@ -168,8 +173,8 @@
                             <div class="project_section">
                                 <span class="project_dot"></span>
                                 <div>
-                                    <h3>How I have organised my work process</h3>
-                                    <p>We split the app into clear components from the start — board, tasks, contacts
+                                    <h3 data-i18n="work_process">How I have organised my work process</h3>
+                                    <p data-i18n="join_process">We split the app into clear components from the start — board, tasks, contacts
                                         and auth each had their own files and logic. We used Git to coordinate our work
                                         and kept naming and structure consistent so anyone could jump into any part of
                                         the code.</p>
@@ -178,8 +183,8 @@
                             <div class="project_section">
                                 <span class="project_dot"></span>
                                 <div>
-                                    <h3>My group work experience</h3>
-                                    <p>Built in a team of three, with each person owning specific features. I worked on
+                                    <h3 data-i18n="group_exp">My group work experience</h3>
+                                    <p data-i18n="join_team">Built in a team of three, with each person owning specific features. I worked on
                                         the task board and drag & drop logic. We held regular check-ins to stay aligned
                                         and made sure no one was blocked for long — clean communication made the whole
                                         project run smoothly.</p>
@@ -209,8 +214,8 @@
                             <div class="project_section">
                                 <span class="project_dot"></span>
                                 <div>
-                                    <h3>About the project <span class="project_duration">Duration: 3 weeks</span></h3>
-                                    <p>A browser-based 2D jump & run game where you play as a Mexican character fighting
+                                    <h3><span data-i18n="about_project">About the project</span> <span class="project_duration" data-i18n="duration_pollo">Duration: 3 weeks</span></h3>
+                                    <p data-i18n="pollo_about">A browser-based 2D jump & run game where you play as a Mexican character fighting
                                         off chickens. Collect coins and Tabasco bottles across the level to power up and
                                         defeat the final boss. Built entirely in vanilla JavaScript with a focus on
                                         object-oriented programming.</p>
@@ -219,8 +224,8 @@
                             <div class="project_section">
                                 <span class="project_dot"></span>
                                 <div>
-                                    <h3>How I have organised my work process</h3>
-                                    <p>Every game element — the player, enemies, collectibles and the endboss — is its
+                                    <h3 data-i18n="work_process">How I have organised my work process</h3>
+                                    <p data-i18n="pollo_process">Every game element — the player, enemies, collectibles and the endboss — is its
                                         own class with clear responsibilities. I structured the project around
                                         inheritance so shared logic like movement and collision lives in base classes,
                                         keeping each object clean and focused. Assets, levels and game logic are
@@ -230,8 +235,8 @@
                             <div class="project_section">
                                 <span class="project_dot"></span>
                                 <div>
-                                    <h3>My solo work experience</h3>
-                                    <p>This was a solo project, which meant full ownership of every decision —
+                                    <h3 data-i18n="solo_exp">My solo work experience</h3>
+                                    <p data-i18n="pollo_team">This was a solo project, which meant full ownership of every decision —
                                         architecture, game logic, balancing and debugging. It pushed me to think more
                                         carefully about structure upfront, since there was no one else to untangle messy
                                         code. Finishing a playable game independently was one of the more satisfying
@@ -262,8 +267,8 @@
                             <div class="project_section">
                                 <span class="project_dot"></span>
                                 <div>
-                                    <h3>About the project <span class="project_duration">Duration: 1 week</span></h3>
-                                    <p>A Pokédex web app built by consuming a public REST API. Search and browse
+                                    <h3><span data-i18n="about_project">About the project</span> <span class="project_duration" data-i18n="duration_pokedex">Duration: 1 week</span></h3>
+                                    <p data-i18n="pokedex_about">A Pokédex web app built by consuming a public REST API. Search and browse
                                         Pokémon, view their stats, types and details — all fetched live from the
                                         PokéAPI. Clean, responsive and fast.</p>
                                 </div>
@@ -271,8 +276,8 @@
                             <div class="project_section">
                                 <span class="project_dot"></span>
                                 <div>
-                                    <h3>How I have organised my work process</h3>
-                                    <p>I kept the project intentionally simple and clean — API calls, rendering logic
+                                    <h3 data-i18n="work_process">How I have organised my work process</h3>
+                                    <p data-i18n="pokedex_process">I kept the project intentionally simple and clean — API calls, rendering logic
                                         and styling each in their own place. Working with external data taught me how to
                                         handle asynchronous requests, parse JSON responses and display dynamic content
                                         without a framework.</p>
@@ -281,8 +286,8 @@
                             <div class="project_section">
                                 <span class="project_dot"></span>
                                 <div>
-                                    <h3>My solo work experience</h3>
-                                    <p>Solo project from start to finish. Short timeline meant I had to prioritise fast
+                                    <h3 data-i18n="solo_exp">My solo work experience</h3>
+                                    <p data-i18n="pokedex_team">Solo project from start to finish. Short timeline meant I had to prioritise fast
                                         — core functionality first, polish after. It was a great exercise in working
                                         with real-world APIs and translating raw data into a usable interface.</p>
                                 </div>
@@ -311,7 +316,7 @@
         </div>
 
         <div class="main_box">
-            <h2>Need a teamplayer? Here's what my colleagues say about me</h2>
+            <h2 data-i18n="teamplayer_title">Need a teamplayer? Here's what my colleagues say about me</h2>
         </div>
 
         <div id="teamplayer_content">
@@ -319,7 +324,7 @@
             <div class="teamplayer_bubble">
                 <p class="teamplayer_name">Mischa S.</p>
                 <p class="teamplayer_project">Project <a href="#projects_title">Join</a></p>
-                <p class="teamplayer_text">"What I appreciate most is that he actually cares about the code quality.
+                <p class="teamplayer_text" data-i18n="mischa_text">"What I appreciate most is that he actually cares about the code quality.
                     He asks good questions and never ships something he doesn't understand."</p>
                 <a href="https://ch.linkedin.com/in/mischa-sigrist-08a8b6a1" class="teamplayer_linkedin" target="_blank" rel="noopener noreferrer">Linked In
                     Profile</a>
@@ -328,7 +333,7 @@
             <div class="teamplayer_bubble">
                 <p class="teamplayer_name">Christopher B.</p>
                 <p class="teamplayer_project">Project <a href="#projects_title">Join</a></p>
-                <p class="teamplayer_text">"Filip is easy to work with. He communicates clearly, takes feedback well
+                <p class="teamplayer_text" data-i18n="christopher_text">"Filip is easy to work with. He communicates clearly, takes feedback well
                     and always follows through on what he says he'll do."</p>
                 <a href="https://de.linkedin.com/in/christopher-braun-6586a7407" class="teamplayer_linkedin" target="_blank" rel="noopener noreferrer">Linked
                     In Profile</a>
@@ -337,14 +342,14 @@
         </div>
 
         <div class="main_box">
-            <h1 id="contact_title">Contact me</h1>
+            <h1 id="contact_title" data-i18n="contact_title">Contact me</h1>
             <a href="#" id="arrow_top">
                 <img src="./imgs/svgs/Arrow down.svg">
             </a>
             <div id="contact_content">
 
                 <div id="contact_top">
-                    <p id="contact_intro">Feel free to get in touch with job offers or any kind of opportunities. I'm
+                    <p id="contact_intro" data-i18n="contact_intro">Feel free to get in touch with job offers or any kind of opportunities. I'm
                         always open to new projects and collaborations.</p>
                     <div id="contact_info">
                         <a href="mailto:filip.rozanowski@gmail.com" class="contact_info_item">
@@ -361,16 +366,16 @@
                 <form id="contact_form">
                     <div id="contact_form_top">
                         <div class="input_group">
-                            <label>Your name</label>
+                            <label data-i18n="label_name">Your name</label>
                             <input type="text" id="contact_name" placeholder="">
                         </div>
                         <div class="input_group">
-                            <label>Your Email</label>
+                            <label data-i18n="label_email">Your Email</label>
                             <input type="email" id="contact_email" placeholder="">
                         </div>
                     </div>
                     <div class="input_group">
-                        <label>Your Message</label>
+                        <label data-i18n="label_message">Your Message</label>
                         <textarea rows="6" id="contact_message"></textarea>
                     </div>
                     <div id="contact_form_bottom">
@@ -378,12 +383,12 @@
                             <input type="checkbox" id="privacy">
                             <label for="privacy">
                                 <span data-i18n="checkbox_before">I've read the </span>
-                                <a href="./privacy.html" target="_blank">privacy policy</a>
+                                <a href="./privacy.html" target="_blank" data-i18n="privacy_link">privacy policy</a>
                                 <span data-i18n="checkbox_after"> and agree to the processing of my data as
                                     outlined.</span>
                             </label>
                         </div>
-                        <button type="submit" id="contact_send">Send</button>
+                        <button type="submit" id="contact_send" data-i18n="send_btn">Send</button>
                     </div>
                 </form>
             </div>
@@ -416,6 +421,7 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script src="./translations.js"></script>
     <script src="./script.js"></script>
 
 </body>

@@ -8,8 +8,9 @@
     <link rel="icon" type="image/svg+xml" href="./imgs/svgs/Logo icon.svg">
     <link rel="stylesheet" href="./css/base.css">
     <link rel="stylesheet" href="./css/nav.css">
-    <link rel="stylesheet" href="./css/header.css">
     <link rel="stylesheet" href="./css/sections.css">
+    <link rel="stylesheet" href="./css/footer.css">
+    <link rel="stylesheet" href="./css/responsive-nav.css">
     <link rel="stylesheet" href="./css/responsive.css">
     <link rel="stylesheet" href="./css/legal.css">
 </head>
@@ -31,10 +32,10 @@
 
     <div id="mobile-nav" role="navigation" aria-hidden="true">
         <div id="mobile-nav-blob">
-            <a href="./index.html#whyme_title" class="mobile-nav-link">Why me</a>
-            <a href="./index.html#skills_title" class="mobile-nav-link">Skills</a>
-            <a href="./index.html#projects_title" class="mobile-nav-link">Projects</a>
-            <a href="./index.html#contact_title" class="mobile-nav-link">Contact</a>
+            <a href="./index.html#whyme_title" class="mobile-nav-link" data-i18n="nav_whyme">Why me</a>
+            <a href="./index.html#skills_title" class="mobile-nav-link" data-i18n="nav_skills">Skills</a>
+            <a href="./index.html#projects_title" class="mobile-nav-link" data-i18n="nav_projects">Projects</a>
+            <a href="./index.html#contact_title" class="mobile-nav-link" data-i18n="nav_contact">Contact</a>
             <div class="mobile-lang">
                 <a href="#" class="lang-btn" data-lang="de">DE</a>
                 <a href="#" class="lang-btn active" data-lang="en">EN</a>
@@ -49,10 +50,10 @@
             <p class="blue_text">developer</p>
         </div>
 
-        <a href="./index.html#whyme_title">Why me</a>
-        <a href="./index.html#skills_title">Skills</a>
-        <a href="./index.html#projects_title">Projects</a>
-        <a href="./index.html#contact_title">Contact</a>
+        <a href="./index.html#whyme_title" data-i18n="nav_whyme">Why me</a>
+        <a href="./index.html#skills_title" data-i18n="nav_skills">Skills</a>
+        <a href="./index.html#projects_title" data-i18n="nav_projects">Projects</a>
+        <a href="./index.html#contact_title" data-i18n="nav_contact">Contact</a>
 
         <div id="lang_select">
             <a href="#" class="lang-btn" data-lang="de">DE</a>
@@ -140,6 +141,7 @@
         </div>
     </footer>
 
+    <script src="./translations.js"></script>
     <script src="./script.js"></script>
 
 </body>
