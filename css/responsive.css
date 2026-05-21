@@ -154,6 +154,8 @@
         flex-direction: column;
         align-items: center;
         gap: 20px;
+        padding: 0;
+        width: auto;
     }
 
     #bg-shape-container {
@@ -169,6 +171,8 @@
         align-items: center;
         gap: 16px;
         height: auto;
+        flex: none;
+        padding: 0;
     }
 
     .logo_header_small {

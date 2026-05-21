@@ -4,7 +4,7 @@ header {
     position: relative;
     display: flex;
     align-items: center;
-    justify-content: flex-end;
+    justify-content: center;
     flex-direction: column;
     min-height: calc(100vh - clamp(40px, 7vw, 90px));
     width: 100%;
@@ -13,6 +13,10 @@ header {
 #header_top {
     display: flex;
     align-items: flex-end;
+    width: 100%;
+    padding: 0 clamp(20px, 3vw, 50px);
+    box-sizing: border-box;
+    gap: clamp(20px, 4vw, 60px);
 }
 
 #bg-shape-container {
@@ -50,8 +54,9 @@ header {
     align-items: center;
     justify-content: space-between;
     align-self: flex-end;
+    flex: 1;
     height: clamp(240px, 38vw, 580px);
-    padding: clamp(12px, 1.5vw, 20px) 0;
+    padding: clamp(12px, 1.5vw, 20px) 0 clamp(28px, 4vw, 60px) 0;
 }
 
 /* ─── TITLE ─── */
