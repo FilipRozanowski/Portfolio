@@ -1,0 +1,21 @@
+/* ─── FOOTER ─── */
+
+footer {
+    padding: clamp(14px, 4.5vw, 75px) max(clamp(20px, 3vw, 50px), calc((100% - 1440px) / 2));
+    background-color: var(--color-blue);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: clamp(14px, 1.1vw, 17px);
+    box-sizing: border-box;
+}
+
+footer a {
+    text-decoration: none;
+    color: var(--color-dark);
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: var(--color-white);
+}

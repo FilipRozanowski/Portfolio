@@ -1,0 +1,82 @@
+/* ─── SKILLS ─── */
+
+#skills_content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: clamp(16px, 3.5vw, 54px);
+}
+
+.skills_grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: clamp(10px, 1.8vw, 27px);
+}
+
+.skill_item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: clamp(4px, 0.5vw, 8px);
+}
+
+.skill_item img {
+    width: clamp(44px, 4.5vw, 90px);
+    height: clamp(44px, 4.5vw, 90px);
+    object-fit: contain;
+    transition: transform 0.3s ease, filter 0.3s ease;
+    filter: brightness(0.8);
+}
+
+.skill_item img:hover {
+    transform: translateY(-5px);
+    filter: brightness(1.2);
+}
+
+.skill_item p {
+    color: var(--color-white);
+    font-size: clamp(13px, 1.1vw, 15px);
+    margin: 0;
+    text-align: center;
+}
+
+#skills_bubble {
+    border-radius: 60% 40% 55% 45% / 50% 45% 55% 50%;
+    width: clamp(120px, 24vw, 345px);
+    height: clamp(100px, 21vw, 308px);
+    background-color: rgba(137, 188, 217, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: clamp(16px, 4.5vw, 63px);
+    flex-shrink: 0;
+    transition: border-radius 0.5s ease, background-color 0.5s ease;
+    box-sizing: border-box;
+}
+
+#skills_bubble:hover {
+    border-radius: 45% 55% 40% 60% / 55% 40% 60% 45%;
+    background-color: rgba(137, 188, 217, 0.2);
+}
+
+.bubble_title {
+    color: var(--color-white);
+    font-size: clamp(13px, 1.1vw, 15px);
+    margin: 0 0 clamp(4px, 0.8vw, 14px) 0;
+}
+
+.bubble_icons {
+    display: flex;
+    gap: clamp(7px, 1vw, 18px);
+    margin-bottom: clamp(4px, 0.8vw, 14px);
+}
+
+.bubble_text {
+    color: var(--color-white);
+    font-size: clamp(12px, 0.9vw, 14px);
+    line-height: 1.6;
+    margin: 0;
+    opacity: 0.8;
+}
