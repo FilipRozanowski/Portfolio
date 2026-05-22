@@ -22,6 +22,10 @@ let currentLang = localStorage.getItem('lang') || 'en';
 
 // ─── LANGUAGE ───
 
+/**
+ * Updates every element carrying a [data-i18n] attribute to the given language.
+ * @param {string} lang - Language code ('en' | 'de').
+ */
 function applyLanguage(lang) {
   document.querySelectorAll('[data-i18n]').forEach(el => {
     const key = el.dataset.i18n;
@@ -29,11 +33,19 @@ function applyLanguage(lang) {
   });
 }
 
+/**
+ * Marks all .lang-btn elements inactive and activates the buttons matching lang.
+ * @param {string} lang - Language code ('en' | 'de').
+ */
 function setActiveLangBtns(lang) {
   langBtns.forEach(b => b.classList.remove('active'));
   document.querySelectorAll(`.lang-btn[data-lang="${lang}"]`).forEach(b => b.classList.add('active'));
 }
 
+/**
+ * Persists the chosen language to localStorage and applies it to the UI.
+ * @param {string} lang - Language code ('en' | 'de').
+ */
 function switchLanguage(lang) {
   currentLang = lang;
   localStorage.setItem('lang', lang);
@@ -68,6 +80,9 @@ window.addEventListener('scroll', () => {
   if (nav) nav.style.boxShadow = window.scrollY > 0 ? '0 4px 20px rgba(0,0,0,0.4)' : 'none';
 });
 
+/**
+ * Opens the mobile navigation overlay and locks page scroll.
+ */
 function openMenu() {
   burgerBtn.classList.add('open');
   mobileNav.classList.add('open');
@@ -76,6 +91,9 @@ function openMenu() {
   document.body.style.overflow = 'hidden';
 }
 
+/**
+ * Closes the mobile navigation overlay and restores page scroll.
+ */
 function closeMenu() {
   burgerBtn.classList.remove('open');
   mobileNav.classList.remove('open');
@@ -91,6 +109,11 @@ window.addEventListener('resize', () => { if (window.innerWidth > 850) closeMenu
 
 // ─── CONTACT FORM ───
 
+/**
+ * Marks a form input as invalid and renders an inline error message below it.
+ * @param {HTMLElement} input - The field to mark.
+ * @param {string} message - Error text to display beneath the field.
+ */
 function showError(input, message) {
   input.style.borderColor = '#e74c3c';
   let error = input.parentElement.querySelector('.error_msg');
@@ -102,16 +125,34 @@ function showError(input, message) {
   error.textContent = message;
 }
 
+/**
+ * Clears the error state from a form input and removes any error message.
+ * @param {HTMLElement} input - The field to clear.
+ */
 function clearError(input) {
   input.style.borderColor = 'var(--color-blue)';
   const error = input.parentElement.querySelector('.error_msg');
   if (error) error.remove();
 }
 
+/**
+ * Tests whether a string is a syntactically valid email address.
+ * @param {string} email - The string to test.
+ * @returns {boolean} True if the string matches a basic email pattern.
+ */
 function isValidEmail(email) {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 }
 
+/**
+ * Validates all contact form fields and marks each invalid one with an error.
+ * @param {Object} t - Translation strings for the active language.
+ * @param {string} t.error_name - Error text for a missing name.
+ * @param {string} t.error_email - Error text for a missing email.
+ * @param {string} t.error_email_invalid - Error text for a malformed email.
+ * @param {string} t.error_message - Error text for a missing message.
+ * @returns {boolean} True when every field passes validation.
+ */
 function validateFields(t) {
   let valid = true;
   if (!nameInput.value.trim()) { showError(nameInput, t.error_name); valid = false; }
@@ -123,17 +164,33 @@ function validateFields(t) {
   return valid;
 }
 
+/**
+ * Resets the send button and contact form after a successful email delivery.
+ * @param {Object} t - Translation strings for the active language.
+ * @param {string} t.sent - Button label while showing success state.
+ * @param {string} t.send_btn - Default button label to restore after 3 s.
+ */
 function onEmailSent(t) {
   sendBtn.textContent = t.sent;
   contactForm.reset();
   setTimeout(() => { sendBtn.textContent = t.send_btn; sendBtn.disabled = false; }, 3000);
 }
 
+/**
+ * Restores the send button to its default state after a failed email delivery.
+ * @param {Object} t - Translation strings for the active language.
+ * @param {string} t.error_send - Button label to show on failure.
+ */
 function onEmailError(t) {
   sendBtn.textContent = t.error_send;
   sendBtn.disabled = false;
 }
 
+/**
+ * Disables the send button and delivers the contact form data via EmailJS.
+ * @param {Object} t - Translation strings for the active language.
+ * @param {string} t.sending - Button label to show while the request is in flight.
+ */
 function sendEmail(t) {
   sendBtn.textContent = t.sending;
   sendBtn.disabled = true;
