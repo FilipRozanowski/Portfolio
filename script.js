@@ -22,35 +22,32 @@ let currentLang = localStorage.getItem('lang') || 'en';
 
 // ─── LANGUAGE ───
 
-/**
- * Updates every element carrying a data-i18n attribute to the given language.
- * @param {string} lang - Language code ('en' or 'de').
- */
 function applyLanguage(lang) {
   document.querySelectorAll('[data-i18n]').forEach(el => {
     const key = el.dataset.i18n;
-    if (translations[lang][key] !== undefined) {
-      el.textContent = translations[lang][key];
-    }
+    if (translations[lang][key] !== undefined) el.textContent = translations[lang][key];
   });
 }
 
-langBtns.forEach(btn => {
-  btn.addEventListener('click', e => {
-    e.preventDefault();
-    langBtns.forEach(b => b.classList.remove('active'));
-    document.querySelectorAll(`.lang-btn[data-lang="${btn.dataset.lang}"]`)
-      .forEach(b => b.classList.add('active'));
-    currentLang = btn.dataset.lang;
-    localStorage.setItem('lang', currentLang);
-    applyLanguage(currentLang);
-  });
-});
+function setActiveLangBtns(lang) {
+  langBtns.forEach(b => b.classList.remove('active'));
+  document.querySelectorAll(`.lang-btn[data-lang="${lang}"]`).forEach(b => b.classList.add('active'));
+}
+
+function switchLanguage(lang) {
+  currentLang = lang;
+  localStorage.setItem('lang', lang);
+  setActiveLangBtns(lang);
+  applyLanguage(lang);
+}
+
+langBtns.forEach(btn => btn.addEventListener('click', e => {
+  e.preventDefault();
+  switchLanguage(btn.dataset.lang);
+}));
 
 if (currentLang !== 'en') {
-  langBtns.forEach(b => b.classList.remove('active'));
-  document.querySelectorAll(`.lang-btn[data-lang="${currentLang}"]`)
-    .forEach(b => b.classList.add('active'));
+  setActiveLangBtns(currentLang);
   applyLanguage(currentLang);
 }
 
@@ -58,25 +55,19 @@ if (currentLang !== 'en') {
 
 tabBtns.forEach(btn => {
   btn.addEventListener('click', () => {
-    const target = btn.dataset.project;
     tabBtns.forEach(b => b.classList.remove('active'));
     projectPanels.forEach(p => p.classList.remove('active'));
     btn.classList.add('active');
-    document.querySelector(`.project_panel[data-project="${target}"]`).classList.add('active');
+    document.querySelector(`.project_panel[data-project="${btn.dataset.project}"]`).classList.add('active');
   });
 });
 
-// ─── NAV SHADOW ───
+// ─── NAV ───
 
 window.addEventListener('scroll', () => {
   if (nav) nav.style.boxShadow = window.scrollY > 0 ? '0 4px 20px rgba(0,0,0,0.4)' : 'none';
 });
 
-// ─── MOBILE NAV ───
-
-/**
- * Opens the mobile navigation overlay and locks page scroll.
- */
 function openMenu() {
   burgerBtn.classList.add('open');
   mobileNav.classList.add('open');
@@ -85,9 +76,6 @@ function openMenu() {
   document.body.style.overflow = 'hidden';
 }
 
-/**
- * Closes the mobile navigation overlay and restores page scroll.
- */
 function closeMenu() {
   burgerBtn.classList.remove('open');
   mobileNav.classList.remove('open');
@@ -96,27 +84,13 @@ function closeMenu() {
   document.body.style.overflow = '';
 }
 
-burgerBtn.addEventListener('click', () => {
-  mobileNav.classList.contains('open') ? closeMenu() : openMenu();
-});
-
+burgerBtn.addEventListener('click', () => mobileNav.classList.contains('open') ? closeMenu() : openMenu());
 mobileLinks.forEach(link => link.addEventListener('click', closeMenu));
-
-mobileNav.addEventListener('click', e => {
-  if (e.target === mobileNav) closeMenu();
-});
-
-window.addEventListener('resize', () => {
-  if (window.innerWidth > 850) closeMenu();
-});
+mobileNav.addEventListener('click', e => { if (e.target === mobileNav) closeMenu(); });
+window.addEventListener('resize', () => { if (window.innerWidth > 850) closeMenu(); });
 
 // ─── CONTACT FORM ───
 
-/**
- * Marks an input as invalid with a red border and inline error message.
- * @param {HTMLElement} input - The field to mark.
- * @param {string} message - Error text to display.
- */
 function showError(input, message) {
   input.style.borderColor = '#e74c3c';
   let error = input.parentElement.querySelector('.error_msg');
@@ -128,23 +102,45 @@ function showError(input, message) {
   error.textContent = message;
 }
 
-/**
- * Clears the error state from an input field.
- * @param {HTMLElement} input - The field to clear.
- */
 function clearError(input) {
   input.style.borderColor = 'var(--color-blue)';
   const error = input.parentElement.querySelector('.error_msg');
   if (error) error.remove();
 }
 
-/**
- * Tests whether a string is a valid email address.
- * @param {string} email
- * @returns {boolean}
- */
 function isValidEmail(email) {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+}
+
+function validateFields(t) {
+  let valid = true;
+  if (!nameInput.value.trim()) { showError(nameInput, t.error_name); valid = false; }
+  if (!emailInput.value.trim()) { showError(emailInput, t.error_email); valid = false; }
+  else if (!isValidEmail(emailInput.value.trim())) { showError(emailInput, t.error_email_invalid); valid = false; }
+  if (!messageInput.value.trim()) { showError(messageInput, t.error_message); valid = false; }
+  if (!privacyCheckbox.checked) { privacyCheckbox.style.borderColor = '#e74c3c'; valid = false; }
+  else { privacyCheckbox.style.borderColor = 'var(--color-blue)'; }
+  return valid;
+}
+
+function onEmailSent(t) {
+  sendBtn.textContent = t.sent;
+  contactForm.reset();
+  setTimeout(() => { sendBtn.textContent = t.send_btn; sendBtn.disabled = false; }, 3000);
+}
+
+function onEmailError(t) {
+  sendBtn.textContent = t.error_send;
+  sendBtn.disabled = false;
+}
+
+function sendEmail(t) {
+  sendBtn.textContent = t.sending;
+  sendBtn.disabled = true;
+  const params = { from_name: nameInput.value.trim(), from_email: emailInput.value.trim(), message: messageInput.value.trim() };
+  emailjs.send('service_gn89i8d', 'template_dqr9g9k', params)
+    .then(() => onEmailSent(t))
+    .catch(() => onEmailError(t));
 }
 
 if (contactForm) {
@@ -154,50 +150,8 @@ if (contactForm) {
 
   contactForm.addEventListener('submit', e => {
     e.preventDefault();
-    let valid = true;
     const t = translations[currentLang];
-
-    if (!nameInput.value.trim()) {
-      showError(nameInput, t.error_name);
-      valid = false;
-    }
-    if (!emailInput.value.trim()) {
-      showError(emailInput, t.error_email);
-      valid = false;
-    } else if (!isValidEmail(emailInput.value.trim())) {
-      showError(emailInput, t.error_email_invalid);
-      valid = false;
-    }
-    if (!messageInput.value.trim()) {
-      showError(messageInput, t.error_message);
-      valid = false;
-    }
-    if (!privacyCheckbox.checked) {
-      privacyCheckbox.style.borderColor = '#e74c3c';
-      valid = false;
-    } else {
-      privacyCheckbox.style.borderColor = 'var(--color-blue)';
-    }
-
-    if (!valid) return;
-
-    sendBtn.textContent = t.sending;
-    sendBtn.disabled = true;
-
-    emailjs.send('service_gn89i8d', 'template_dqr9g9k', {
-      from_name:  nameInput.value.trim(),
-      from_email: emailInput.value.trim(),
-      message:    messageInput.value.trim()
-    }).then(() => {
-      sendBtn.textContent = t.sent;
-      contactForm.reset();
-      setTimeout(() => {
-        sendBtn.textContent = t.send_btn;
-        sendBtn.disabled = false;
-      }, 3000);
-    }).catch(() => {
-      sendBtn.textContent = t.error_send;
-      sendBtn.disabled = false;
-    });
+    if (!validateFields(t)) return;
+    sendEmail(t);
   });
 }
