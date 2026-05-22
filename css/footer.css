@@ -19,3 +19,9 @@ footer a {
 footer a:hover {
     color: var(--color-white);
 }
+
+#footer_legal {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
