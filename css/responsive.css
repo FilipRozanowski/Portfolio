@@ -139,8 +139,8 @@
     }
 
     .skill_item img {
-        width: clamp(60px, 15vw, 80px);
-        height: clamp(60px, 15vw, 80px);
+        width: clamp(48px, 12vw, 64px);
+        height: clamp(48px, 12vw, 64px);
     }
 
     .skill_item p {
