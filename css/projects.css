@@ -100,8 +100,8 @@
 }
 
 .tech_icons img {
-    width: clamp(48px, 3.5vw, 64px);
-    height: clamp(48px, 3.5vw, 64px);
+    width: clamp(29px, 2.9vw, 58px);
+    height: clamp(29px, 2.9vw, 58px);
     object-fit: contain;
 }
 
