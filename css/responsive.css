@@ -294,17 +294,21 @@
         height: clamp(18px, 5vw, 26px);
     }
 
+    #contact_form {
+        gap: 16px;
+    }
+
     #contact_form_top {
         flex-direction: column;
         gap: 0;
     }
 
     .input_group {
-        padding-bottom: 28px;
+        padding-bottom: 38px;
     }
 
     #checkbox_group {
-        padding-bottom: 28px;
+        padding-bottom: 32px;
     }
 
     .input_group input,
