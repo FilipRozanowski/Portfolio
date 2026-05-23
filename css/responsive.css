@@ -254,8 +254,8 @@
     }
 
     .tech_icons img {
-        width: clamp(64px, 13vw, 80px);
-        height: clamp(64px, 13vw, 80px);
+        width: clamp(48px, 12vw, 64px);
+        height: clamp(48px, 12vw, 64px);
     }
 
     .project_preview {
