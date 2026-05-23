@@ -48,7 +48,7 @@
 .contact_info_item p {
     color: var(--color-white);
     margin: 0;
-    font-size: clamp(15px, 1.3vw, 17px);
+    font-size: clamp(16px, 1.3vw, 17px);
     transition: color 0.3s ease;
 }
 
@@ -82,7 +82,7 @@
 
 .input_group label {
     color: var(--color-white);
-    font-size: clamp(13px, 1.1vw, 15px);
+    font-size: clamp(16px, 1.3vw, 17px);
     opacity: 0.7;
     margin-left: clamp(7px, 1vw, 15px);
 }
@@ -95,7 +95,7 @@
     padding: clamp(7px, 1vw, 15px) clamp(10px, 1.5vw, 21px);
     color: var(--color-white);
     font-family: 'JosefinSans', sans-serif;
-    font-size: clamp(14px, 1.1vw, 16px);
+    font-size: clamp(16px, 1.3vw, 17px);
     outline: none;
     transition: border-color 0.3s ease;
     width: 100%;
@@ -147,7 +147,7 @@
 
 #contact_checkbox label {
     color: var(--color-white);
-    font-size: clamp(13px, 0.9vw, 14px);
+    font-size: clamp(16px, 1.1vw, 17px);
     opacity: 0.8;
 }
 
@@ -161,7 +161,7 @@
     border: 2px solid var(--color-blue);
     color: var(--color-white);
     font-family: 'JosefinSans', sans-serif;
-    font-size: clamp(14px, 1.1vw, 17px);
+    font-size: clamp(16px, 1.1vw, 17px);
     padding: clamp(6px, 0.8vw, 11px) clamp(14px, 2vw, 36px);
     border-radius: 50px;
     cursor: pointer;
@@ -175,7 +175,7 @@
 
 .error_msg {
     color: #e74c3c;
-    font-size: clamp(12px, 0.9vw, 13px);
+    font-size: clamp(16px, 1.1vw, 17px);
     margin-left: clamp(7px, 1vw, 15px);
 }
 
