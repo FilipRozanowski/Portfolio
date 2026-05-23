@@ -299,6 +299,14 @@
         gap: 0;
     }
 
+    .input_group {
+        padding-bottom: 28px;
+    }
+
+    #checkbox_group {
+        padding-bottom: 28px;
+    }
+
     .input_group input,
     .input_group textarea {
         font-size: clamp(16px, 3.5vw, 17px);
