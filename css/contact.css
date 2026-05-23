@@ -122,6 +122,13 @@
     display: flex;
     flex-direction: column;
     gap: 4px;
+    position: relative;
+}
+
+#checkbox_group .error_msg {
+    position: absolute;
+    bottom: -22px;
+    left: 0;
 }
 
 #contact_checkbox {

@@ -21,8 +21,8 @@
 }
 
 .skill_item img {
-    width: clamp(36px, 3.6vw, 72px);
-    height: clamp(36px, 3.6vw, 72px);
+    width: clamp(29px, 2.9vw, 58px);
+    height: clamp(29px, 2.9vw, 58px);
     object-fit: contain;
     transition: transform 0.3s ease, filter 0.3s ease;
     filter: brightness(0.8);
@@ -34,7 +34,7 @@
 }
 
 .skill_item p {
-    color: var(--color-white);
+    color: #89BCD9;
     font-size: clamp(16px, 1.5vw, 18px);
     margin: 0;
     text-align: center;

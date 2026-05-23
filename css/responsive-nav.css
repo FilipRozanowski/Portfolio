@@ -10,6 +10,10 @@
         display: flex;
     }
 
+    #mobile-topbar .logo_nav_small .blue_text {
+        color: #89BCD9;
+    }
+
     #burger-btn {
         display: flex;
         flex-direction: column;
