@@ -57,7 +57,7 @@ nav {
     position: sticky;
     top: 0;
     z-index: 100;
-    padding: 0 max(clamp(20px, 3vw, 50px), calc((100% - 1440px) / 2));
+    padding: 0 clamp(20px, 3vw, 50px);
     box-sizing: border-box;
 }
 
