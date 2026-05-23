@@ -135,6 +135,25 @@ function clearError(input) {
   if (error) error.remove();
 }
 
+function showCheckboxError(message) {
+  privacyCheckbox.style.borderColor = '#e74c3c';
+  const group = document.getElementById('checkbox_group');
+  let error = group.querySelector('.error_msg');
+  if (!error) {
+    error = document.createElement('span');
+    error.classList.add('error_msg');
+    group.appendChild(error);
+  }
+  error.textContent = message;
+}
+
+function clearCheckboxError() {
+  privacyCheckbox.style.borderColor = 'var(--color-blue)';
+  const group = document.getElementById('checkbox_group');
+  const error = group.querySelector('.error_msg');
+  if (error) error.remove();
+}
+
 /**
  * Tests whether a string is a syntactically valid email address.
  * @param {string} email - The string to test.
@@ -159,8 +178,8 @@ function validateFields(t) {
   if (!emailInput.value.trim()) { showError(emailInput, t.error_email); valid = false; }
   else if (!isValidEmail(emailInput.value.trim())) { showError(emailInput, t.error_email_invalid); valid = false; }
   if (!messageInput.value.trim()) { showError(messageInput, t.error_message); valid = false; }
-  if (!privacyCheckbox.checked) { privacyCheckbox.style.borderColor = '#e74c3c'; valid = false; }
-  else { privacyCheckbox.style.borderColor = 'var(--color-blue)'; }
+  if (!privacyCheckbox.checked) { showCheckboxError(t.error_privacy); valid = false; }
+  else { clearCheckboxError(); }
   return valid;
 }
 
@@ -204,6 +223,7 @@ if (contactForm) {
   [nameInput, emailInput, messageInput].forEach(input => {
     input.addEventListener('input', () => clearError(input));
   });
+  privacyCheckbox.addEventListener('change', () => { if (privacyCheckbox.checked) clearCheckboxError(); });
 
   contactForm.addEventListener('submit', e => {
     e.preventDefault();

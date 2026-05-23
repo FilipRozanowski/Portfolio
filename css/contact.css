@@ -115,7 +115,13 @@
 #contact_form_bottom {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
+}
+
+#checkbox_group {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
 }
 
 #contact_checkbox {
@@ -171,6 +177,9 @@
     color: #e74c3c;
     font-size: clamp(12px, 0.9vw, 13px);
     margin-left: clamp(7px, 1vw, 15px);
+}
+
+.input_group .error_msg {
     position: absolute;
     bottom: 4px;
     left: 0;

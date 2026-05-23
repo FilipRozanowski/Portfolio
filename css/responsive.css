@@ -86,8 +86,11 @@
         margin-top: clamp(30px, 8vw, 80px);
     }
 
-    .main_box {
+    .page_width {
         width: 90%;
+    }
+
+    .main_box {
         margin-bottom: clamp(40px, 8vw, 100px);
     }
 

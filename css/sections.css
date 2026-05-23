@@ -1,5 +1,10 @@
 /* ─── MAIN ─── */
 
+.page_width {
+    width: 84%;
+    max-width: 1440px;
+}
+
 main {
     display: flex;
     flex-direction: column;
@@ -29,8 +34,6 @@ main h2 {
 .main_box {
     display: flex;
     flex-direction: column;
-    width: 84%;
-    max-width: 1440px;
     margin-bottom: clamp(30px, 5vw, 90px);
 }
 
@@ -86,8 +89,6 @@ main h2 {
     gap: clamp(10px, 1.8vw, 27px);
     justify-content: center;
     align-items: center;
-    width: 84%;
-    max-width: 1440px;
     margin-bottom: clamp(30px, 5vw, 90px);
 }
 

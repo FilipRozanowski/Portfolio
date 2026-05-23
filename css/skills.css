@@ -35,7 +35,7 @@
 
 .skill_item p {
     color: var(--color-white);
-    font-size: clamp(13px, 1.1vw, 15px);
+    font-size: clamp(16px, 1.5vw, 18px);
     margin: 0;
     text-align: center;
 }
